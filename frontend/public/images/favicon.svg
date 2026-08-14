@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256">
+  <!-- Nền xanh rừng thiên nhiên Nishi-Tama -->
+  <circle cx="32" cy="32" r="30" fill="#2E5A44" />
+  
+  <!-- Bông hoa Ume (5 cánh hoa màu hồng nhạt) -->
+  <g fill="#F4A8B7">
+    <circle cx="32" cy="18" r="8" />
+    <circle cx="45" cy="27" r="8" />
+    <circle cx="40" cy="42" r="8" />
+    <circle cx="24" cy="42" r="8" />
+    <circle cx="19" cy="27" r="8" />
+  </g>
+  
+  <!-- Nhụy hoa Ume ở giữa -->
+  <circle cx="32" cy="32" r="7" fill="#FFFDD0" />
+  <circle cx="32" cy="32" r="3" fill="#E87A90" />
+</svg>

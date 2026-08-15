@@ -78,7 +78,7 @@ export const ui = {
       lead: {
         en: "A visual orientation guide, not a timetable — how central Tokyo connects westward to the eight areas of Nishi Tama.",
         ja: "時刻表ではなく、位置関係をつかむための図です。都心から西へ、西多摩の8つのエリアへ。",
-        vi: "Hướng dẫn định hướng trực quan, không phải lịch trình — cách Tokyo trung tâm kết nối về phía tây với tám khu vực của Nishi Tama.",
+        vi: "Bản đồ trực quan giúp bạn hình dung cách từ trung tâm Tokyo kết nối về phía Tây đến 8 khu vực của Nishi Tama.",
         zh: "这是一份可视化导览而非时间表——展示了东京市中心如何向西连接西多摩的八个地区。",
         ko: "시간표가 아닌 시각적 방향 안내입니다 — 도쿄 중심부가 서쪽의 8개 니시타마 지역과 어떻게 연결되는지 보여줍니다.",        de: "Ein visueller Orientierungsleitfaden, kein Fahrplan — wie zentraler Tokio westwärts zu den acht Gebieten von Nishi Tama verbindet.",
         ru: "Визуальный ориентир, не расписание — как центральный Токио соединяется на запад с восемью районами Ниси Тама.",
@@ -218,7 +218,7 @@ export const ui = {
     title: {
       en: "Discover the other side of Tokyo",
       ja: "もうひとつの東京へ",
-      vi: "Khám phá mặt khác của Tokyo",
+      vi: "Khám phá vẻ đẹp khác của Tokyo",
       zh: "发现东京的另一面",
       ko: "도쿄의 또 다른 면을 발견하세요",      de: "Entdecke die andere Seite Tokios",
       ru: "Откройте другую сторону Токио",

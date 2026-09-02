@@ -18,6 +18,9 @@ import {
  *      and src/data/*.ts. Missing keys fall back to English automatically.
  */
 
+
+
+
 export const LOCALES = [
   { code: "en", label: "English", short: "EN" },
   { code: "ja", label: "日本語", short: "JP" },
@@ -32,26 +35,41 @@ export const LOCALES = [
 export type Lang = (typeof LOCALES)[number]["code"];
 
 /** A translatable value. `en` is required and acts as the fallback. */
-export type Localized<T = string> = { en: T } & Partial<Record<Lang, T>>;
+export type Localized<T = string> = {
+  en?: T;
+  ja?: T;
+  vi?: T;
+  zh?: T;
+  ko?: T;
+  de?: T;
+  ru?: T;
+};
 
 export function pick<T>(value: Localized<T>, lang: Lang): T {
-  const result = value[lang] ?? value.en;
-  
- 
+  const result =
+    value[lang] ??
+    value.en ??
+    value.ja ??
+    (Object.values(value).find((v) => v !== undefined) as T);
+
   if (typeof result === "string") {
-    return result.normalize("NFC") as T;
+    return result.normalize("NFC") as unknown as T;
   }
-  
+
   return result as T;
 }
-type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: <T>(v: Localized<T>) => T };
+
+type Ctx = {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  t: <T>(v: Localized<T>) => T;
+};
 
 const LangContext = createContext<Ctx>({
   lang: "en",
   setLang: () => {},
-  t: (v) => v.en,
+  t: (v) => pick(v, "en"), 
 });
-
 const STORAGE_KEY = "nishitama.lang";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

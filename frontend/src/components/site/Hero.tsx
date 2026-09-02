@@ -26,7 +26,10 @@ export function Hero() {
         <h1 className="mt-6 animate-fade-in font-display text-[clamp(2.5rem,8vw,5.75rem)] font-light leading-[1.02] tracking-tight text-cream">
           {t(ui.hero.title)}
         </h1>
-        <p className="mx-auto mt-7 max-w-xl animate-fade-in text-base leading-relaxed text-cream/85 sm:text-lg">
+        <p className="mt-5 animate-fade-in font-display text-[clamp(1.25rem,3.5vw,1.875rem)] font-light tracking-wide text-cream/90">
+          {t(ui.hero.motto)}
+        </p>
+        <p className="mx-auto mt-6 max-w-xl animate-fade-in text-base leading-relaxed text-cream/85 sm:text-lg">
           {t(ui.hero.lead)}
         </p>
 

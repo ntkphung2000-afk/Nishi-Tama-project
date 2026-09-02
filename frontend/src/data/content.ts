@@ -1,4 +1,4 @@
-import { images } from "@/config/images";
+  import { images } from "@/config/images";
 import type { Localized } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------
@@ -10,6 +10,11 @@ export type Area = {
   id: string;
   ja: string;
   en: string;
+  vi?: string;
+  zh?: string;
+  ko?: string;
+  ru?: string;
+  de?: string;
   image: string;
   intro: Localized;
   highlights: Localized<string[]>;
@@ -20,14 +25,29 @@ export const areas: Area[] = [
     id: "ome",
     ja: "青梅市",
     en: "Ome City",
+    vi: "Thành phố Ome",
+    zh: "青梅市",
+    ko: "오메시",
+    ru: "Город Оме",
+    de: "Stadt Ome",
     image: images.ome,
     intro: {
       en: "A former post town on the Tama River where old streets, temples and plum groves meet the entrance to the mountains.",
       ja: "多摩川沿いに開けた歴史ある町。古い街並みや寺社、梅の里が、山への入口とつながります。",
-    },
+      vi:"Nằm ở phía Tây Tokyo, Ome nổi bật với thiên nhiên phong phú, lịch sử và những khu phố mang nét hoài niệm. Từ núi Mitake, thung lũng Mitake đến Yoshino Baigo, du khách có thể khám phá vẻ đẹp bốn mùa và văn hóa địa phương.",
+      zh:"青梅市位于东京西部，以丰富的自然、悠久的历史和怀旧街景而闻名。从御岳山、御岳溪谷到吉野梅乡，游客可以感受四季之美与当地文化。",
+      ko:"도쿄 서부에 위치한 오메시는 풍부한 자연과 역사, 향수를 불러일으키는 거리 풍경이 매력적인 곳입니다. 미타케산과 미타케 계곡, 요시노 바이코에서 사계절의 아름다움과 지역 문화를 만날 수 있습니다.",
+      ru:"Оме находится на западе Токио и славится богатой природой, историей и атмосферой старой Японии. Здесь можно насладиться красотой горы Митакэ, ущелья Митакэ и района Ёсино Байго в любое время года.",
+      de:"Ome liegt im Westen Tokios und ist für seine reiche Natur, Geschichte und nostalgische Atmosphäre bekannt. Am Berg Mitake, in der Mitake-Schlucht und in Yoshino Baigo können Besucher die Schönheit der Jahreszeiten und die lokale Kultur erleben.",
+      },
     highlights: {
       en: ["Ome old town", "Yoshino Baigo plum area", "Tama River riverside", "Gateway to Mount Mitake"],
       ja: ["青梅旧市街", "吉野梅郷", "多摩川沿いの散策", "御岳山への玄関口"],
+      vi:["Phố cổ Ome","Khu vực hoa mơ Yoshino Baigo","Bờ sông Tama","Cửa ngõ lên núi Mitake"],
+      zh:["青梅老街","吉野梅乡","多摩川河畔","御岳山门户"],
+      ko:["오메 구시가지","요시노 바이코 매화 명소","다마강 강변","미타케산의 관문"],
+      ru:["Старый город Оме","Район Ёсино Байго","Берег реки Тама","Ворота к горе Митакэ"],
+      de:["Altstadt von Ome","Pflaumenblütengebiet Yoshino Baigo","Ufer des Tama-Flusses","Tor zum Berg Mitake"],
     },
   },
   {

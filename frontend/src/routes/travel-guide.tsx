@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FaqSection, GuideSection, PlanSection } from "@/components/sections/Planning";
 import { RailwaySection } from "@/components/sections/Railway";
+import { WeekdayNoteSection } from "@/components/sections/SlowDown";
 import { PageHeader } from "@/components/site/PageHeader";
 import { images } from "@/config/images";
 
@@ -36,6 +37,7 @@ function GuidePage() {
       />
       <RailwaySection />
       <PlanSection />
+      <WeekdayNoteSection />
       <GuideSection />
       <FaqSection />
     </>

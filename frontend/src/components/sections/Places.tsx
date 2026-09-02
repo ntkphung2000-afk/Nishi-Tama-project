@@ -1,6 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
-import { destinations, specialties } from "@/data/content";
+import { destinations, tasteOfNishiTamaData } from "@/data/content";
 import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 import { Figure } from "../site/Figure";
@@ -87,15 +87,15 @@ export function SpecialtiesSection() {
       />
 
       <ul className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
-        {specialties.map((s, i) => (
+        {tasteOfNishiTamaData.map((s, i) => (
           <Reveal as="li" key={s.id} delay={(i % 3) * 90} className="group">
             <Figure
               src={s.image}
-              alt={t(s.name)}
+              alt={t(s.title)}
               className="img-zoom aspect-4/3 w-full"
-              label={t(s.name)}
+              label={t(s.title)}
             />
-            <h3 className="mt-5 text-2xl text-cream">{t(s.name)}</h3>
+            <h3 className="mt-5 text-2xl text-cream">{t(s.title)}</h3>
             <p className="mt-3 text-sm leading-relaxed text-cream/70">{t(s.description)}</p>
             <p className="mt-4 text-[0.6875rem] tracking-[0.2em] uppercase text-cream/50">
               {t(s.area)}

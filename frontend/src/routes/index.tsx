@@ -4,8 +4,14 @@ import { AreasSection, IntroSection } from "@/components/sections/Discover";
 import { DestinationsSection, SpecialtiesSection } from "@/components/sections/Places";
 import { EventsSection, ExperiencesSection } from "@/components/sections/Happenings";
 import { MannersSection } from "@/components/sections/Manners";
-import { FaqSection, GuideSection, PlanSection } from "@/components/sections/Planning";
+import { FaqSection, GuideSection } from "@/components/sections/Planning";
 import { ContactSection } from "@/components/sections/Contact";
+import {
+  ADayAwaySection,
+  ClosingSection,
+  OmeLineTeaserSection,
+  WhyNishiTamaSection,
+} from "@/components/sections/SlowDown";
 
 const title = "Nishi Tama — Discover the Other Side of Tokyo";
 const description =
@@ -30,16 +36,19 @@ function Index() {
     <>
       <h1 className="sr-only">Nishi Tama — Hidden Nature Near Tokyo</h1>
       <Hero />
+      <WhyNishiTamaSection />
       <IntroSection />
       <AreasSection />
+      <OmeLineTeaserSection />
       <DestinationsSection />
       <SpecialtiesSection />
       <ExperiencesSection />
+      <ADayAwaySection />
       <EventsSection />
       <MannersSection />
-      <PlanSection />
       <GuideSection />
       <FaqSection />
+      <ClosingSection />
       <ContactSection />
     </>
   );

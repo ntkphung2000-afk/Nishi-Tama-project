@@ -88,13 +88,6 @@ export function EventsSection() {
             <p className="mt-6 text-[0.6875rem] tracking-[0.2em] uppercase text-cream/55">
               {t(featuredEvent.location)}
             </p>
-            <button
-              type="button"
-              className="mt-8 inline-flex min-h-11 w-fit items-center gap-3 border border-cream/50 px-6 text-[0.75rem] tracking-[0.2em] uppercase text-cream transition-colors hover:bg-cream/12"
-            >
-              {t(ui.events.details)}
-              <span aria-hidden="true" className="h-px w-6 bg-current" />
-            </button>
           </div>
         </article>
       </Reveal>
@@ -103,7 +96,7 @@ export function EventsSection() {
       <ul className="mt-14 border-t border-forest/20">
         {augustEvents.map((e, i) => (
           <Reveal as="li" key={e.id} delay={(i % 4) * 60}>
-            <article className="group grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4 border-b border-forest/20 py-7 sm:grid-cols-[7rem_10rem_minmax(0,1fr)] sm:items-center sm:gap-8 lg:grid-cols-[8rem_14rem_minmax(0,1fr)_9rem]">
+            <article className="grid grid-cols-1 items-start gap-4 border-b border-forest/20 py-7 sm:grid-cols-[7rem_10rem_minmax(0,1fr)] sm:items-center sm:gap-8 lg:grid-cols-[8rem_14rem_minmax(0,1fr)]">
               <p className="font-display text-2xl text-forest sm:text-[1.75rem]">{e.date}</p>
 
               <Figure
@@ -113,7 +106,7 @@ export function EventsSection() {
                 label={e.en}
               />
 
-              <div className="col-span-2 min-w-0 sm:col-span-1 sm:col-start-3">
+              <div className="min-w-0 sm:col-start-3">
                 <h3 className="font-jp text-base text-forest-deep sm:text-lg">{e.ja}</h3>
                 <p className="mt-1 font-display text-xl text-charcoal sm:text-2xl">{e.en}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -123,13 +116,6 @@ export function EventsSection() {
                   {t(e.location)}
                 </p>
               </div>
-
-              <button
-                type="button"
-                className="col-start-2 row-start-1 justify-self-end text-[0.6875rem] tracking-[0.2em] uppercase text-forest underline-offset-4 hover:underline sm:col-start-4 sm:row-start-auto lg:justify-self-start"
-              >
-                {t(ui.events.details)}
-              </button>
             </article>
           </Reveal>
         ))}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Lang, LOCALES, useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
+import { HeaderSearch } from "./HeaderSearch";
 
 const navItems = [
   { to: "/discover", label: ui.nav.discover },
@@ -49,25 +50,28 @@ export function Header() {
       }`}
     >
       <div className="mx-auto grid w-full max-w-[1400px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:px-12">
-        <Link to="/" className="group flex min-w-0 items-baseline gap-3">
-          <span
-            className={`font-display text-xl tracking-[0.28em] transition-colors sm:text-2xl ${
-              solid ? "text-forest-deep" : "text-cream"
-            }`}
-          >
-            NISHI TAMA
-          </span>
-          <span
-            className={`hidden font-jp text-sm tracking-[0.2em] transition-colors sm:inline ${
-              solid ? "text-forest/70" : "text-cream/70"
-            }`}
-          >
-            西多摩
-          </span>
-        </Link>
+        <div className="flex min-w-0 items-center gap-2 sm:gap-4">
+          <Link to="/" className="group flex min-w-0 items-baseline gap-3">
+            <span
+              className={`font-display text-xl tracking-[0.28em] transition-colors sm:text-2xl ${
+                solid ? "text-forest-deep" : "text-cream"
+              }`}
+            >
+              NISHI TAMA
+            </span>
+            <span
+              className={`hidden font-jp text-sm tracking-[0.2em] transition-colors sm:inline ${
+                solid ? "text-forest/70" : "text-cream/70"
+              }`}
+            >
+              西多摩
+            </span>
+          </Link>
+          <HeaderSearch solid={solid} />
+        </div>
 
         {/* Desktop nav */}
-        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-x-6 xl:flex 2xl:gap-x-7">
           {navItems.map((item) => (
             <Link
               key={item.to}
@@ -103,7 +107,7 @@ export function Header() {
           onClick={() => setOpen(true)}
           aria-label={t(ui.nav.menu)}
           aria-expanded={open}
-          className={`flex h-11 w-11 items-center justify-center lg:hidden ${
+          className={`flex h-11 w-11 items-center justify-center xl:hidden ${
             solid ? "text-forest-deep" : "text-cream"
           }`}
         >
@@ -118,7 +122,7 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-50 lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+        className={`fixed inset-0 z-50 xl:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
         aria-hidden={!open}
       >
         <div

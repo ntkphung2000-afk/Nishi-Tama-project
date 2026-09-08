@@ -79,7 +79,7 @@ export function AreasSection() {
 
       <ul className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
         {areas.map((area, i) => (
-          <Reveal as="li" key={area.id} delay={(i % 4) * 90} className="group flex flex-col">
+          <Reveal as="li" key={area.id} delay={(i % 4) * 90} className="flex flex-col">
             <Figure
               src={area.image}
               alt={`${area.en} — ${t(area.intro)}`}
@@ -100,11 +100,6 @@ export function AreasSection() {
                   </li>
                 ))}
               </ul>
-
-              <span className="mt-5 inline-flex items-center gap-2 text-[0.75rem] tracking-[0.2em] uppercase text-forest transition-colors group-hover:text-forest-deep">
-                {t(ui.areas.explore)}
-                <span aria-hidden="true" className="h-px w-6 bg-current transition-all duration-300 group-hover:w-9" />
-              </span>
             </div>
           </Reveal>
         ))}

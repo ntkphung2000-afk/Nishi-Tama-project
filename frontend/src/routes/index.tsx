@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
+import { CoreValuesSection } from "@/components/sections/CoreValues";
 import { AreasSection, IntroSection } from "@/components/sections/Discover";
 import { DestinationsSection, SpecialtiesSection } from "@/components/sections/Places";
 import { EventsSection, ExperiencesSection } from "@/components/sections/Happenings";
@@ -36,6 +37,7 @@ function Index() {
     <>
       <h1 className="sr-only">Nishi Tama — Hidden Nature Near Tokyo</h1>
       <Hero />
+      <CoreValuesSection />
       <WhyNishiTamaSection />
       <IntroSection />
       <AreasSection />

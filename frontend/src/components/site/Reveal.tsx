@@ -18,6 +18,17 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // If the element is already at or near the viewport at mount time
+    // (e.g. a long page where layout/hydration finishes after the user
+    // has already scrolled past it), reveal it immediately rather than
+    // waiting on an IntersectionObserver entry that may never re-fire.
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setVisible(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -30,7 +41,16 @@ export function Reveal({
       { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    // Safety net: never leave content permanently invisible if the
+    // observer somehow never fires (e.g. a missed recompute after a
+    // late layout shift from web-font loading).
+    const fallback = window.setTimeout(() => setVisible(true), 1500);
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return (

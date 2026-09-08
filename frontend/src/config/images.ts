@@ -111,6 +111,28 @@ export const images = {
 
   // Hikawa Area
   hikawa: "/images/areas/hikawa-area.jpg",
+
+  // Mount Hinode — image not yet supplied; Figure.tsx shows a labeled
+  // placeholder until a real photo is placed at this exact path.
+  mountHinode: "/images/areas/mount-hinode.jpg",
+
+  // Mount Odake — image not yet supplied.
+  mountOdake: "/images/areas/mount-odake.jpg",
+
+  // Hamura Zoo — image not yet supplied.
+  hamuraZoo: "/images/areas/hamura-zoo.jpg",
+
+  // Tokyo Summerland — image not yet supplied.
+  tokyoSummerland: "/images/areas/tokyo-summerland.jpg",
+
+  // Hinode Tsurutsuru Onsen — image not yet supplied.
+  hinodeTsurutsuruOnsen: "/images/areas/hinode-tsurutsuru-onsen.jpg",
+
+  // Ozawa Sake Brewery (Sawanoi) — image not yet supplied.
+  ozawaSakeBrewery: "/images/areas/ozawa-sake-brewery.jpg",
+
+  // Ishikawa Brewery — image not yet supplied.
+  ishikawaBrewery: "/images/areas/ishikawa-brewery.jpg",
 },
 
   // ============================================================

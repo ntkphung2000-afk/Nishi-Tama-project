@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
-* {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+/*
+ * Vietnamese only: the decorative faces (Cormorant Garamond) and the body
+ * face (Zen Kaku Gothic New) mis-stack Vietnamese tone marks — combining
+ * accents detach and render as loose characters. Plus Jakarta Sans ships
+ * complete precomposed Vietnamese glyphs, so pin vi to it. All other
+ * locales keep the design's --font-display / --font-jp / --font-sans.
+ */
+:lang(vi) {
+  font-family: 'Plus Jakarta Sans', 'Shippori Mincho', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 @source "../src";
 @import "tw-animate-css";
@@ -49,7 +56,9 @@
   --color-river: var(--river);
   --color-blossom: var(--blossom);
   --color-sky: var(--sky);
-  --font-display: "Cormorant Garamond", "Noto Serif", "Iowan Old Style", "Georgia", "Times New Roman", serif;
+  --color-sage: var(--sage);
+  --color-clay: var(--clay);
+  --font-display: "Cormorant Garamond", "Shippori Mincho", "Noto Serif", "Iowan Old Style", "Georgia", "Times New Roman", serif;
   --font-jp: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", "MS Mincho", serif;
   --font-sans: "Zen Kaku Gothic New", "Noto Sans JP", "Noto Sans SC", "Noto Sans KR", "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans", "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
 }
@@ -65,6 +74,11 @@
   --river: oklch(0.55 0.05 210);
   --blossom: oklch(0.83 0.05 15);
   --sky: oklch(0.86 0.03 230);
+
+  /* Muted accents for the "Three Core Values" band — drawn from the
+   * existing forest / warm-wood / river hues, kept low-chroma. */
+  --sage: oklch(0.48 0.033 155);
+  --clay: oklch(0.53 0.075 45);
 
   --background: var(--cream);
   --foreground: var(--charcoal);

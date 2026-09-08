@@ -12,7 +12,7 @@ const links = [
   { to: "/contact", label: ui.nav.contact },
 ] as const;
 
-const socials = ["Instagram", "YouTube", "X", "Facebook"];
+const INSTAGRAM_URL = "https://www.instagram.com/nishitama_tokyo_/";
 
 export function Footer() {
   const { t, lang, setLang } = useLang();
@@ -67,11 +67,17 @@ export function Footer() {
 
             <p className="eyebrow mt-10 text-cream/55">{t(ui.footer.social)}</p>
             <ul className="mt-5 flex flex-wrap gap-4">
-              {socials.map((s) => (
-                <li key={s}>
-                  <span className="cursor-default text-sm text-cream/60">{s}</span>
-                </li>
-              ))}
+              <li>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-cream/70 transition-colors hover:text-cream"
+                >
+                  Instagram
+                  <span className="sr-only"> ({t(ui.usefulLinks.newTab)})</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,17 +1,19 @@
-import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
 import { x } from "@/lib/dictionary-extra";
 import {
   adventureLineStations,
   chuoLineStations,
+  nishiTama20Stations,
   omeLineStations,
-  stationCards,
   type RailStation,
 } from "@/data/stations";
 import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 import { NishiTamaMascot } from "@/components/site/NishiTamaMascot";
+import { StationCard } from "@/components/site/StationCard";
+import { StationExplorer } from "@/components/site/StationExplorer";
 
 function TrainIcon({ className = "" }: { className?: string }) {
   return (
@@ -121,6 +123,7 @@ function Leg({
 
 export function RailwaySection() {
   const { t } = useLang();
+  const [selectedStationId, setSelectedStationId] = useState<string | null>(null);
 
   const directionsUrl =
     "https://www.google.com/maps/dir/?api=1&origin=" +
@@ -203,40 +206,15 @@ export function RailwaySection() {
         </p>
 
         <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stationCards.map((s, i) => (
+          {nishiTama20Stations.map((s, i) => (
             <Reveal as="li" key={s.id} delay={(i % 3) * 80} className="flex">
-              <div className="flex w-full flex-col border border-forest/20 bg-background p-6">
-                <span className="inline-block self-start border border-forest/35 px-2 py-0.5 text-[0.625rem] tracking-[0.14em] text-forest/80">
-                  {s.code}
-                </span>
-                <h3 className="mt-3 font-display text-2xl leading-tight text-forest-deep">{s.en}</h3>
-                <p className="font-jp text-sm text-charcoal/70">{s.ja}</p>
-                <p className="eyebrow mt-2">{t(s.character)}</p>
-                <dl className="mt-4 space-y-1 text-xs text-muted-foreground">
-                  <div className="flex gap-2">
-                    <dt className="shrink-0 uppercase tracking-[0.16em]">{t(x.rail.line)}</dt>
-                    <dd>{t(s.line)}</dd>
-                  </div>
-                  <div className="flex gap-2">
-                    <dt className="shrink-0 uppercase tracking-[0.16em]">{t(x.rail.area)}</dt>
-                    <dd>{t(s.municipality)}</dd>
-                  </div>
-                </dl>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-charcoal/85">
-                  {t(s.description)}
-                </p>
-                <a
-                  href={`/areas/${s.areaId}`}
-                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-3 border border-forest-deep px-5 text-[0.7rem] tracking-[0.2em] uppercase text-forest-deep transition-colors hover:bg-forest-deep hover:text-cream"
-                >
-                  {t(x.rail.exploreArea)}
-                  <span aria-hidden="true" className="h-px w-5 bg-current" />
-                </a>
-              </div>
+              <StationCard station={s} onOpen={setSelectedStationId} />
             </Reveal>
           ))}
         </ul>
       </div>
+
+      <StationExplorer stationId={selectedStationId} onClose={() => setSelectedStationId(null)} />
     </Section>
   );
 }

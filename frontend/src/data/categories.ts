@@ -1,4 +1,46 @@
 import type { Localized } from "@/lib/i18n";
+import type { PlaceCategoryGroup } from "./places";
+
+export type { PlaceCategoryGroup };
+
+/* ------------------------------------------------------------------
+ * PLACE CATEGORIES — single source of truth for PlaceCategoryGroup
+ * ordering and for the free-text `categoryRaw` label translations.
+ *
+ * Before this file existed, the same 7-value category order was
+ * hand-copied into SmartTripPlanner.tsx, StationCard.tsx and
+ * StationExplorer.tsx independently (with SmartTripPlanner and
+ * StationCard sharing one order, StationExplorer using a different
+ * one). Both orders are preserved here exactly as they were — this is
+ * a structural move only, not a visual change.
+ * ------------------------------------------------------------------ */
+
+/** Order used by SmartTripPlanner's category chips and StationCard's category tags. */
+export const PLACE_CATEGORY_ORDER: PlaceCategoryGroup[] = [
+  "food",
+  "cafe",
+  "omiyage",
+  "nature",
+  "attraction",
+  "onsen",
+  "outdoor",
+];
+
+/**
+ * Order used by StationExplorer's category groupings. Intentionally
+ * different from PLACE_CATEGORY_ORDER (food/cafe/onsen/nature/outdoor
+ * before attraction/omiyage) — preserved as-is pending explicit
+ * approval to unify the two orderings.
+ */
+export const STATION_EXPLORER_CATEGORY_ORDER: PlaceCategoryGroup[] = [
+  "food",
+  "cafe",
+  "onsen",
+  "nature",
+  "outdoor",
+  "attraction",
+  "omiyage",
+];
 
 /**
  * Localized label for every distinct `categoryRaw` value found in

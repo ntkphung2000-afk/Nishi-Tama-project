@@ -1,7 +1,8 @@
 import { useLang } from "@/lib/i18n";
 import { x } from "@/lib/dictionary-extra";
-import { placesForStation, type PlaceCategoryGroup } from "@/data/places";
+import { placesForStation } from "@/data/places";
 import { stationById } from "@/data/stations";
+import { STATION_EXPLORER_CATEGORY_ORDER } from "@/data/categories";
 import {
   Drawer,
   DrawerClose,
@@ -12,16 +13,6 @@ import {
 import { CategoryIcon } from "./CategoryIcon";
 import { PlaceCard } from "./PlaceCard";
 import { PlaceDataDisclaimer } from "./PlaceDataDisclaimer";
-
-const CATEGORY_ORDER: PlaceCategoryGroup[] = [
-  "food",
-  "cafe",
-  "onsen",
-  "nature",
-  "outdoor",
-  "attraction",
-  "omiyage",
-];
 
 /**
  * Station Explorer — a bottom drawer (vaul, already used elsewhere in the
@@ -37,7 +28,9 @@ export function StationExplorer({
   const { t } = useLang();
   const station = stationId ? stationById(stationId) : undefined;
   const places = stationId ? placesForStation(stationId) : [];
-  const groupsPresent = CATEGORY_ORDER.filter((g) => places.some((p) => p.groups.includes(g)));
+  const groupsPresent = STATION_EXPLORER_CATEGORY_ORDER.filter((g) =>
+    places.some((p) => p.groups.includes(g)),
+  );
 
   return (
     <Drawer open={Boolean(station)} onOpenChange={(open) => !open && onClose()}>

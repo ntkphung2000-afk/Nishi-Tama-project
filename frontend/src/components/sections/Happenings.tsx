@@ -1,6 +1,7 @@
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
-import { augustEvents, experiences, featuredEvent } from "@/data/content";
+import { experiences } from "@/data/content";
+import { augustEvents, featuredEvent } from "@/data/events";
 import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 import { Figure } from "../site/Figure";

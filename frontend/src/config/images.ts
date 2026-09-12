@@ -17,6 +17,11 @@ export const images = {
   // ============================================================
 
   hero: "/images/nishitama-hero.jpg",
+  // Cinematic Hero background sequence. Only genuinely scenic photographs
+  // belong here — nishitama-hero(1).JPG and nishitama-hero(2).JPG are
+  // tourist snapshots (a station signpost, a hand holding a notebook),
+  // not landscape photography, so they're intentionally excluded.
+  heroScenes: ["/images/nishitama-hero.jpg", "/images/nishitama-hero(3).JPG"],
   nishitama: "/images/nishitama-overview.jpg",
 
   // ============================================================

@@ -16,12 +16,14 @@ export const images = {
   // MAIN WEBSITE IMAGES
   // ============================================================
 
-  hero: "/images/nishitama-hero.jpg",
-  // Cinematic Hero background sequence. Only genuinely scenic photographs
-  // belong here — nishitama-hero(1).JPG and nishitama-hero(2).JPG are
-  // tourist snapshots (a station signpost, a hand holding a notebook),
-  // not landscape photography, so they're intentionally excluded.
-  heroScenes: ["/images/nishitama-hero.jpg", "/images/nishitama-hero(3).JPG"],
+  hero: "/images/hero/nishitama-hero.jpg",
+  // Cinematic Hero background sequence, kept in its own folder
+  // (public/images/hero/) for easy management. Only genuinely scenic
+  // photographs belong here — the original nishitama-hero(1).JPG and
+  // nishitama-hero(2).JPG snapshots (a station signpost, a hand holding a
+  // notebook) were tourist snapshots, not landscape photography, and have
+  // since been removed/replaced.
+  heroScenes: ["/images/hero/nishitama-hero.jpg", "/images/hero/nishitama-hero(1).jpg"],
   nishitama: "/images/nishitama-overview.jpg",
 
   // ============================================================

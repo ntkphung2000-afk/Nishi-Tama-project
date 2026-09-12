@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { images } from "@/config/images";
 import { useLang } from "@/lib/i18n";
@@ -7,9 +7,11 @@ import { NishiTamaMapMark } from "./NishiTamaMapMark";
 
 const SCENES = images.heroScenes;
 
-// Suggested pacing from the design brief: 5-7s per scene, ~1.2-1.8s crossfade.
-const SCENE_DURATION_MS = 6500;
-const CROSSFADE_MS = 1500;
+// Faster pacing per feedback on the first pass (which used the design
+// brief's slower 5-7s/1.2-1.8s suggestion) -- still a crossfade + Ken Burns,
+// just quicker to read as "alive" rather than a slow dissolve.
+const SCENE_DURATION_MS = 4000;
+const CROSSFADE_MS = 800;
 
 /** Tracks the user's OS-level reduced-motion preference (SSR-safe default: false). */
 function usePrefersReducedMotion() {

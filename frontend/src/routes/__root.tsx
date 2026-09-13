@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { LanguageProvider } from "@/lib/i18n";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { ChatWidget } from "@/components/site/ChatWidget";
 
 
 function NotFoundComponent() {
@@ -140,6 +141,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <ChatWidget />
       </LanguageProvider>
     </QueryClientProvider>
   );

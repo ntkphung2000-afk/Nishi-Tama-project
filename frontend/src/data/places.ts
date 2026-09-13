@@ -2289,6 +2289,48 @@ export const places: Place[] = [
       ratingStatus: "Not used for selection",
     },
   },
+    {
+    id: "ishigamimae-cafe-baikyo",
+    stationId: "ishigamimae",
+    nameJa: "かふぇ・ばいきょう",
+    groups: ["cafe"],
+    categoryRaw: "Café",
+    walkMinutes: 10,
+    walkLabel: "約10分",
+    description: {
+      ja: "落ち着いた空間でゆっくり過ごせるカフェ。テラス席もあります。",
+    },
+    mapUrl: "https://maps.app.goo.gl/wVE95NbkTB5FXhng7",
+  },
+
+  {
+    id: "ishigamimae-kobaien",
+    stationId: "ishigamimae",
+    nameJa: "紅梅苑",
+    groups: ["food", "omiyage"],
+    categoryRaw: "和菓子・甘味処",
+    walkMinutes: 6,
+    walkLabel: "約6分",
+    description: {
+      ja: "梅の風味を生かした和菓子や甘味を楽しめる、吉野梅郷の菓子処。",
+    },
+    mapUrl: "https://maps.app.goo.gl/6DfybWGc7ipLPoME8",
+  },
+
+  {
+    id: "hinatawada-ome-city-plum-park",
+    stationId: "hinatawada",
+    nameJa: "青梅市梅の公園",
+    groups: ["nature"],
+    categoryRaw: "Nature / Scenic",
+    walkMinutes: 15,
+    walkLabel: "約15分",
+    description: {
+      ja: "約1,200本の梅が植えられた、吉野梅郷を代表する梅の名所。",
+    },
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A2%85%E5%B8%82%E6%A2%85%E3%81%AE%E5%85%AC%E5%9C%92",
+  },
 ];
 
 /** Places for one station, excluding out-of-scope candidate rows. */

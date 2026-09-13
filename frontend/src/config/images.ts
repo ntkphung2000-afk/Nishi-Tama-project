@@ -160,17 +160,17 @@ export const images = {
 // ============================================================
 
 experiences: {
-  nature: "/images/experiences/experience-nature.JPG",
-  culture: "/images/experiences/experience-culture.JPG",
-  food: "/images/experiences/experience-food.JPG",
-  outdoor: "/images/experiences/experience-outdoor.JPG",
-  seasonal: "/images/experiences/experience-seasonal.JPG",
+  nature: "/images/experiences/experience-nature.jpg",
+  culture: "/images/experiences/experience-culture.jpg",
+  food: "/images/experiences/experience-food.jpg",
+  outdoor: "/images/experiences/experience-outdoor.jpg",
+  seasonal: "/images/experiences/experience-seasonal.jpg",
 
   // Showa retro experience
-  showa: "/images/experiences/experience-showa.JPG",
+  showa: "/images/experiences/experience-showa.jpg",
 
   // Samurai / traditional Japanese culture
-  samurai: "/images/experiences/experience-samurai.JPG",
+  samurai: "/images/experiences/experience-samurai.jpg",
 },
 
   // ============================================================

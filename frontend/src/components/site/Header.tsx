@@ -166,7 +166,7 @@ export function Header() {
               }`}
             />
             <div
-              className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-forest-deep/85 px-7 pb-10 pt-6 text-cream backdrop-blur-md transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-forest-deep px-7 pb-10 pt-6 text-cream backdrop-blur-md transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 open ? "translate-x-0" : "translate-x-full"
               }`}
             >

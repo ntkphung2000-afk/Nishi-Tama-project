@@ -2382,6 +2382,12 @@ export const places: Place[] = [
     walkLabel: "約10分",
     description: {
       ja: "落ち着いた空間でゆっくり過ごせるカフェ。テラス席もあります。",
+      en: "A calm café where you can relax and unwind. Terrace seating is also available.",
+      vi: "Một quán cà phê yên tĩnh, nơi bạn có thể thư giãn và nghỉ ngơi. Cũng có chỗ ngồi ngoài trời trên sân thượng.",
+      zh: "一家安静的咖啡馆，您可以在这里放松身心、悠闲度过。也设有露台座位。",
+      ko: "조용한 분위기 속에서 여유롭게 쉴 수 있는 카페입니다. 테라스 좌석도 마련되어 있습니다.",
+      de: "Ein ruhiges Café, in dem Sie sich entspannen und die Zeit genießen können. Terrassensitzplätze sind ebenfalls vorhanden.",
+      ru: "Спокойное кафе, где можно расслабиться и отдохнуть. Также есть места на террасе.",
     },
     mapUrl: "https://maps.app.goo.gl/wVE95NbkTB5FXhng7",
   },
@@ -2397,6 +2403,12 @@ export const places: Place[] = [
     walkLabel: "約6分",
     description: {
       ja: "梅の風味を生かした和菓子や甘味を楽しめる、吉野梅郷の菓子処。",
+      en: "A confectionery shop in Yoshino Baigo offering wagashi and sweets made with the flavor of plums.",
+      vi: "Một cửa hàng bánh kẹo tại Yoshino Baigo, nơi bạn có thể thưởng thức wagashi và các món ngọt mang hương vị mơ.",
+      zh: "位于吉野梅乡的甜品店，可品尝以梅子风味制作的和果子与甜点。",
+      ko: "매실 풍미를 살린 화과자와 디저트를 즐길 수 있는, 요시노 바이고의 과자점입니다.",
+      de: "Ein Süßwarenladen in Yoshino Baigo, der Wagashi und Süßigkeiten mit Pflaumengeschmack anbietet.",
+      ru: "Кондитерская в Йосино Байго, где можно попробовать вагаси и сладости со вкусом сливы.",
     },
     mapUrl: "https://maps.app.goo.gl/6DfybWGc7ipLPoME8",
   },
@@ -2412,6 +2424,12 @@ export const places: Place[] = [
     walkLabel: "約15分",
     description: {
       ja: "約1,200本の梅が植えられた、吉野梅郷を代表する梅の名所。",
+      en: "A renowned plum-blossom spot in Yoshino Baigo, planted with around 1,200 plum trees.",
+      vi: "Địa điểm ngắm hoa mơ nổi tiếng của Yoshino Baigo, nơi trồng khoảng 1.200 cây mơ.",
+      zh: "吉野梅乡具代表性的赏梅名胜，园内种植约1,200株梅树。",
+      ko: "약 1,200그루의 매화나무가 심어진, 요시노 바이고를 대표하는 매화 명소입니다.",
+      de: "Ein bekannter Pflaumenblüten-Ort in Yoshino Baigo mit rund 1.200 gepflanzten Pflaumenbäumen.",
+      ru: "Знаменитое место цветения слив в Йосино Байго, где посажено около 1 200 сливовых деревьев.",
     },
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A2%85%E5%B8%82%E6%A2%85%E3%81%AE%E5%85%AC%E5%9C%92",

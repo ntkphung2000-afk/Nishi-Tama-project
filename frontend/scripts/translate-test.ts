@@ -20,7 +20,7 @@ const MODEL = "openai/gpt-oss-120b";
 const TARGET_LANGUAGES = ["en", "vi", "zh", "ko", "de", "ru"] as const;
 type TargetLanguage = (typeof TARGET_LANGUAGES)[number];
 
-// --- 3 địa điểm mẫu để test ---
+// --- 3 sample places for testing ---
 const testPlaces = [
   {
     name: "かふぇ・ばいきょう",

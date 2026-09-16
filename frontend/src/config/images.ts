@@ -182,11 +182,21 @@ experiences: {
   omeFireworks: "/images/events/event-ome-fireworks.jpg",
   akirunoSummer: "/images/events/event-akiruno-summer.jpg",
   fussaTanabata: "/images/events/event-fussa-tanabata.jpg",
-  hinodeShishimai: "/images/events/event-hinode-shishimai.jpg",
-  okutamaFireworks: "/images/events/event-okutama-fireworks.jpg",
-  ekinishi: "/images/events/event-ekinishi.jpg",
-  hossawaMatsuri: "/images/events/event-hossawa-matsuri.jpg",
-  yoruichi: "/images/events/event-yoruichi.jpg",
+  hinodeShishimai: "/images/events/event-hinode-shishimai.svg",
+  okutamaFireworks: "/images/events/event-okutama-fireworks.svg",
+  ekinishi: "/images/events/event-ekinishi.svg",
+  hossawaMatsuri: "/images/events/event-hossawa-matsuri.svg",
+  yoruichi: "/images/events/event-yoruichi.svg",
+
+  // Placeholder theme illustrations for the 35 new (non-August) events —
+  // one monoline sketch reused per theme, swap for real photos later.
+  themeMatsuri: "/images/events/event-theme-matsuri.svg",
+  themeNatureSeasonal: "/images/events/event-theme-nature-seasonal.svg",
+  themeFireRitual: "/images/events/event-theme-fire-ritual.svg",
+  themeMarathon: "/images/events/event-theme-marathon.svg",
+  themeMarket: "/images/events/event-theme-market.svg",
+  themeArts: "/images/events/event-theme-arts.svg",
+  themeFireworks: "/images/events/event-theme-fireworks.svg",
 },
 
   // ============================================================

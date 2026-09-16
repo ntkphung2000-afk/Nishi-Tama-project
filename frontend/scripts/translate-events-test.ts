@@ -19,7 +19,7 @@ const MODEL = "openai/gpt-oss-120b";
 const TARGET_LANGUAGES = ["en", "vi", "zh", "ko", "de", "ru"] as const;
 type TargetLanguage = (typeof TARGET_LANGUAGES)[number];
 
-// --- 3 sự kiện mẫu để test (chỉ in ra màn hình, KHÔNG ghi events.ts) ---
+// --- 3 sample events for testing (console output only, does NOT write to events.ts) ---
 const testEvents = [
   {
     id: "eiji-ki",
@@ -44,27 +44,38 @@ const testEvents = [
   },
 ];
 
-// Reference: established romanization/name conventions already used
-// elsewhere in this codebase (areas.ts, content.ts, stations.ts).
-const REFERENCE_NAMES = `
-- 吉野梅郷 -> Yoshino Baigo
-- 御岳山 -> Mount Mitake
-- 御岳渓谷 -> Mitake Gorge
-- 武蔵御嶽神社 -> Musashi Mitake Shrine
-- 塩船観音寺 -> Shiofune Kannon-ji
-- 払沢の滝 -> Hossawa Falls
-- 玉川上水 -> Tamagawa Josui
-- 多摩川 -> Tama River
-- 秋川 -> Akigawa
-- 奥多摩 -> Okutama
-- 青梅市 -> Ome City
-- 福生市 -> Fussa City
-- 羽村市 -> Hamura Town
-- あきる野市 -> Akiruno City
-- 日の出町 -> Hinode Town
-- 檜原村 -> Hinohara Village
-- 瑞穂町 -> Mizuho Town
-`;
+// Reference: established romanization/transliteration conventions
+// already used elsewhere in this codebase (areas.ts, content.ts,
+// stations.ts). For en/vi/de these names stay romanized (not
+// translated by kanji meaning). For zh/ko/ru they are NOT left as
+// raw Latin text either — content.ts always gives them a proper
+// native-script transliteration, so we do the same here.
+type PlaceNameReference = { ja: string; en: string; zh: string; ko: string; ru: string };
+
+const PLACE_NAME_REFERENCE: PlaceNameReference[] = [
+  { ja: "吉野梅郷", en: "Yoshino Baigo", zh: "吉野梅乡", ko: "요시노 바이고", ru: "Йосино Байго" },
+  { ja: "御岳山", en: "Mount Mitake", zh: "御岳山", ko: "미타케산", ru: "Гора Митаке" },
+  { ja: "御岳渓谷", en: "Mitake Gorge", zh: "御岳溪谷", ko: "미타케 계곡", ru: "Ущелье Митаке" },
+  { ja: "武蔵御嶽神社", en: "Musashi Mitake Shrine", zh: "武藏御嶽神社", ko: "무사시 미타케 신사", ru: "Святилище Мусаси Митаке" },
+  { ja: "塩船観音寺", en: "Shiofune Kannon-ji", zh: "盐船观音寺", ko: "시오후네 관음사", ru: "Храм Сиофунэ Каннон-дзи" },
+  { ja: "払沢の滝", en: "Hossawa Falls", zh: "拂泽瀑布", ko: "호사와 폭포", ru: "Водопад Хоссава" },
+  { ja: "多摩川", en: "Tama River", zh: "多摩川", ko: "다마강", ru: "Река Тама" },
+  { ja: "秋川渓谷", en: "Akigawa Valley", zh: "秋川溪谷", ko: "아키가와 계곡", ru: "Долина Акигава" },
+  { ja: "奥多摩湖", en: "Lake Okutama", zh: "奥多摩湖", ko: "오쿠타마호", ru: "Озеро Окутама" },
+  { ja: "奥多摩町", en: "Okutama Town", zh: "奥多摩町", ko: "오쿠타마정", ru: "Поселок Окутама" },
+  { ja: "青梅市", en: "Ome City", zh: "青梅市", ko: "오메시", ru: "Город Оме" },
+  { ja: "福生市", en: "Fussa City", zh: "福生市", ko: "후사시", ru: "город Фусса" },
+  { ja: "羽村市", en: "Hamura City", zh: "羽村市", ko: "하무라시", ru: "Город Хамура" },
+  { ja: "あきる野市", en: "Akiruno City", zh: "秋留野市", ko: "아키루노시", ru: "Город Акируно" },
+  { ja: "日の出町", en: "Hinode Town", zh: "日之出町", ko: "히노데마치", ru: "город Хинодэ" },
+  { ja: "檜原村", en: "Hinohara Village", zh: "桧原村", ko: "히노하라촌", ru: "Деревня Хинохара" },
+];
+
+function formatPlaceNameReference(): string {
+  return PLACE_NAME_REFERENCE.map(
+    (r) => `- ${r.ja} -> en/vi/de: "${r.en}" | zh: "${r.zh}" | ko: "${r.ko}" | ru: "${r.ru}"`
+  ).join("\n");
+}
 
 const LOCALIZED_SCHEMA = {
   type: "object",
@@ -134,9 +145,9 @@ Step 1: Write a short, factual 1-2 sentence description of this event IN JAPANES
 
 Step 2: Translate the event name, the location, and your Japanese description into exactly these 6 languages: English (en), Vietnamese (vi), Simplified Chinese (zh), Korean (ko), German (de), Russian (ru).
 
-This text may reference local place names (mountains, rivers, valleys, shrines, neighborhoods). Preserve their established romanization instead of translating the literal meaning of the kanji. Reference examples already used on this site:
-${REFERENCE_NAMES}
-For place names not listed above, apply the same principle: keep the specific name root as a natural Hepburn romanization, and only translate generic descriptor words (mountain, river, valley, shrine, festival, etc.) into the target language.
+This text may reference local place names (mountains, rivers, valleys, shrines, neighborhoods). For en/vi/de, preserve their established romanization instead of translating the literal meaning of the kanji. For zh/ko/ru, do NOT leave the name as raw Latin/English text either — transliterate it phonetically into that language's own script, matching the site's established convention. Reference examples already used on this site:
+${formatPlaceNameReference()}
+For place names not listed above, apply the same principle: keep the specific name root as a natural Hepburn romanization for en/vi/de, phonetically transliterate it into zh/ko/ru's native script, and only translate generic descriptor words (mountain, river, valley, shrine, festival, etc.) into the target language.
 
 Requirements:
 1. Preserve the original meaning accurately.

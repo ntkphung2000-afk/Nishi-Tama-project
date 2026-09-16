@@ -4,11 +4,14 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export function Reveal({
   children,
   delay = 0,
+  duration,
   className = "",
   as: Tag = "div",
 }: {
   children: ReactNode;
   delay?: number;
+  /** Overrides the .reveal utility's default 900ms transition (ms). */
+  duration?: number;
   className?: string;
   as?: "div" | "section" | "li" | "article" | "header";
 }) {
@@ -58,7 +61,10 @@ export function Reveal({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ref={ref as any}
       data-visible={visible}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{
+        transitionDelay: `${delay}ms`,
+        ...(duration !== undefined && { transitionDuration: `${duration}ms` }),
+      }}
       className={`reveal ${className}`}
     >
       {children}

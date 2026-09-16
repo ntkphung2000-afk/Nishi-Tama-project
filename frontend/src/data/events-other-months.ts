@@ -1,0 +1,700 @@
+import { images } from "@/config/images";
+import type { EventItem } from "./events";
+
+/* ------------------------------------------------------------------
+ * OTHER-MONTH EVENTS — 35 curated events for the 11 months besides
+ * August (already covered by `augustEvents` in events.ts, untouched).
+ *
+ * Japanese (`ja`) is the master data, taken verbatim from the source
+ * calendar (nishitama-kouiki.jp/event-calendar/). `date` preserves the
+ * source's own precision (上旬/中旬/下旬) rather than inventing a exact
+ * day where none was given.
+ *
+ * `en` (name) and `location.en` are a single shared Latin-script string
+ * for all non-Japanese locales — reusing this site's established
+ * romanization/name conventions (see content.ts/areas.ts), not
+ * translated per-language, matching how `Place.nameEn` already works.
+ *
+ * `description` is the only field translated per-language (en/vi/zh/
+ * ko/de/ru), generated directly (not via Groq, due to the project
+ * deadline — see scripts/translate.ts for the Groq-based workflow this
+ * data remains compatible with for future regeneration). Place names
+ * mentioned inside the prose use each language's own established
+ * transliteration (e.g. Yoshino Baigo / 吉野梅乡 / 요시노 바이고 /
+ * Йосино Байго), matching the convention already used in content.ts.
+ *
+ * Placeholder images: one monoline illustration reused per theme
+ * (public/images/events/event-theme-*.svg) — see images.ts. Swap for
+ * real photos once available; nothing else about these entries needs
+ * to change when that happens.
+ * ------------------------------------------------------------------ */
+
+const EVENT_MONTH: Record<string, number> = {
+  "akiruno-daruma-ichi": 1,
+  "ome-daruma-ichi": 1,
+  "akigawa-fudoson-hiwatari": 1,
+  "ome-marathon": 2,
+  "yoshino-baigo-ume-matsuri": 3,
+  "shunki-taisai": 3,
+  "fussa-sakura-matsuri": 3,
+  "hamura-hana-mizu-matsuri": 3,
+  "shiofune-tsutsuji-matsuri": 4,
+  "chofu-taisai": 4,
+  "musashi-mitake-kendo-taikai": 4,
+  "ome-taisai": 5,
+  "fussa-otako-age-taikai": 5,
+  "musashi-mitake-hinode-sai": 5,
+  "fussa-kagayaki-festival": 5,
+  "fukiage-hanashobu-matsuri": 5,
+  "shiofune-saito-goma-hiwatari": 5,
+  "kamanofuchi-shinryoku-sai": 5,
+  "fussa-hotaru-matsuri": 6,
+  "shimin-ongaku-sai": 6,
+  "rengeshouma-matsuri": 7,
+  "yakumo-matsuri": 7,
+  "kyodo-geino-matsuri": 7,
+  "mitake-jinja-sairei": 9,
+  "eiji-ki": 9,
+  "nihon-sangaku-taikyu-race": 10,
+  "tenku-momiji-matsuri": 10,
+  "fussa-international-fair": 10,
+  "mitake-keikoku-shuushoku-matsuri": 10,
+  "ome-sangyo-kanko-matsuri": 11,
+  "omejuku-art-festival": 11,
+  "nishitama-sports-meet": 11,
+  "fussa-fureai-festival": 11,
+  "hossawa-fuyu-matsuri": 12,
+  "ougu-illumination": 12,
+};
+
+export const otherMonthEvents: EventItem[] = [
+  // ================= January =================
+  {
+    id: "akiruno-daruma-ichi",
+    date: "1月10日",
+    ja: "だるま市",
+    en: "Daruma Market",
+    location: { ja: "檜原街道沿い（五日市地区 下町周辺）", en: "Hinohara Kaido (Shitamachi area, Itsukaichi district)" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "あきる野市の檜原街道沿い（五日市地区下町周辺）で、1月10日にだるま市が開催されます。",
+      en: "The Daruma Market is held on January 10 along Hinohara Kaido, around the Shitamachi area of the Itsukaichi district in Akiruno City.",
+      vi: "Chợ Daruma được tổ chức vào ngày 10 tháng 1 dọc theo Hinohara Kaido, quanh khu vực Shitamachi thuộc quận Itsukaichi, thành phố Akiruno.",
+      zh: "达摩市集于1月10日在阿基鲁野市檜原街道沿线（五日市地区下町一带）举行。",
+      ko: "다루마 시장은 1월 10일 아키루노시 이츠카이치 지구 시타마치 일대의 히노하라 가도를 따라 열립니다.",
+      de: "Der Daruma-Markt findet am 10. Januar entlang der Hinohara Kaido im Shitamachi-Gebiet des Itsukaichi-Bezirks in Akiruno City statt.",
+      ru: "Рынок дарума проходит 10 января вдоль дороги Хинохара-кайдо, в районе Ситамати квартала Ицукаити города Акируно.",
+    },
+  },
+  {
+    id: "ome-daruma-ichi",
+    date: "1月12日",
+    ja: "だるま市",
+    en: "Daruma Market",
+    location: { ja: "青梅街道", en: "Ome Kaido" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "青梅市の青梅街道で、1月12日にだるま市が開催されます。",
+      en: "The Daruma Market is held on January 12 along Ome Kaido in Ome City.",
+      vi: "Chợ Daruma được tổ chức vào ngày 12 tháng 1 trên đường Ome Kaido, thành phố Ome.",
+      zh: "达摩市集于1月12日在青梅市青梅街道举行。",
+      ko: "다루마 시장은 1월 12일 오메시 오메 가이도에서 열립니다.",
+      de: "Der Daruma-Markt findet am 12. Januar entlang der Ome Kaido in Ome City statt.",
+      ru: "Рынок дарума проходит 12 января на улице Оме-кайдо в городе Оме.",
+    },
+  },
+  {
+    id: "akigawa-fudoson-hiwatari",
+    date: "1月第3日曜日",
+    ja: "秋川不動尊火渡り",
+    en: "Akigawa Fudoson Fire-Walking Ritual",
+    location: { ja: "西福寺", en: "Saifuku-ji Temple" },
+    image: images.events.themeFireRitual,
+    description: {
+      ja: "日の出町の西福寺で、1月第3日曜日に秋川不動尊の火渡りが行われます。",
+      en: "The Akigawa Fudoson fire-walking ritual is held on the third Sunday of January at Saifuku-ji Temple in Hinode Town.",
+      vi: "Nghi lễ đi trên lửa Akigawa Fudoson được tổ chức vào Chủ nhật thứ ba của tháng 1 tại chùa Saifuku-ji, thị trấn Hinode.",
+      zh: "秋川不动尊过火仪式于1月第三个星期日在日之出町西福寺举行。",
+      ko: "아키가와 후도손 불 건너기 의식은 1월 셋째 일요일 히노데마치 사이후쿠지에서 열립니다.",
+      de: "Das Feuerlauf-Ritual von Akigawa Fudoson findet am dritten Sonntag im Januar im Saifuku-ji-Tempel in Hinode Town statt.",
+      ru: "Ритуал хождения по огню Акигава Фудосон проходит в третье воскресенье января в храме Сайфуку-дзи в городе Хинодэ.",
+    },
+  },
+
+  // ================= February =================
+  {
+    id: "ome-marathon",
+    date: "2月中旬",
+    ja: "青梅マラソン",
+    en: "Ome Marathon",
+    location: { ja: "青梅街道", en: "Ome Kaido" },
+    image: images.events.themeMarathon,
+    description: {
+      ja: "青梅市の青梅街道を舞台に、2月中旬に青梅マラソンが開催されます。",
+      en: "The Ome Marathon is held in mid-February along Ome Kaido in Ome City.",
+      vi: "Giải Marathon Ome được tổ chức vào giữa tháng 2 trên đường Ome Kaido, thành phố Ome.",
+      zh: "青梅马拉松于2月中旬在青梅市青梅街道举行。",
+      ko: "오메 마라톤은 2월 중순 오메시 오메 가이도에서 열립니다.",
+      de: "Der Ome Marathon findet Mitte Februar entlang der Ome Kaido in Ome City statt.",
+      ru: "Марафон Оме проходит в середине февраля на улице Оме-кайдо в городе Оме.",
+    },
+  },
+
+  // ================= March =================
+  {
+    id: "yoshino-baigo-ume-matsuri",
+    date: "3月上旬〜下旬",
+    ja: "吉野梅郷 梅まつり",
+    en: "Yoshino Baigo Plum Festival",
+    location: { ja: "吉野梅郷", en: "Yoshino Baigo" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の吉野梅郷で、3月上旬から下旬にかけて梅まつりが開催されます。",
+      en: "The Yoshino Baigo Plum Festival is held from early to late March in Yoshino Baigo, Ome City.",
+      vi: "Lễ hội hoa mơ Yoshino Baigo được tổ chức từ đầu đến cuối tháng 3 tại Yoshino Baigo, thành phố Ome.",
+      zh: "吉野梅乡梅祭于3月上旬至下旬在青梅市吉野梅乡举行。",
+      ko: "요시노 바이고 매화 축제는 3월 초부터 말까지 오메시 요시노 바이고에서 열립니다.",
+      de: "Das Yoshino Baigo Pflaumenfest findet von Anfang bis Ende März in Yoshino Baigo, Ome City statt.",
+      ru: "Фестиваль сливы Йосино Байго проходит с начала до конца марта в Йосино Байго, город Оме.",
+    },
+  },
+  {
+    id: "shunki-taisai",
+    date: "3月8日",
+    ja: "春季大祭",
+    en: "Spring Grand Festival",
+    location: { ja: "武蔵御嶽神社", en: "Musashi Mitake Shrine" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "青梅市の武蔵御嶽神社で、3月8日に春季大祭が執り行われます。",
+      en: "The Spring Grand Festival is held on March 8 at Musashi Mitake Shrine in Ome City.",
+      vi: "Đại lễ hội mùa xuân được tổ chức vào ngày 8 tháng 3 tại đền Musashi Mitake, thành phố Ome.",
+      zh: "春季大祭于3月8日在青梅市武藏御嶽神社举行。",
+      ko: "춘계대제는 3월 8일 오메시 무사시 미타케 신사에서 봉행됩니다.",
+      de: "Das Frühlings-Großfest wird am 8. März im Musashi-Mitake-Schrein in Ome City abgehalten.",
+      ru: "Весенний грандиозный праздник проходит 8 марта в Святилище Мусаси Митаке в городе Оме.",
+    },
+  },
+  {
+    id: "fussa-sakura-matsuri",
+    date: "3月下旬〜4月上旬",
+    ja: "ふっさ桜まつり",
+    en: "Fussa Cherry Blossom Festival",
+    location: { ja: "多摩川堤防沿い", en: "Tama River embankment" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "福生市の多摩川堤防沿いで、3月下旬から4月上旬にかけてふっさ桜まつりが開催されます。",
+      en: "The Fussa Cherry Blossom Festival is held from late March to early April along the Tama River embankment in Fussa City.",
+      vi: "Lễ hội hoa anh đào Fussa được tổ chức từ cuối tháng 3 đến đầu tháng 4 dọc theo đê sông Tama, thành phố Fussa.",
+      zh: "福生樱花祭于3月下旬至4月上旬在福生市多摩川堤岸举行。",
+      ko: "후사 벚꽃축제는 3월 하순부터 4월 상순까지 후사시 다마강 제방을 따라 열립니다.",
+      de: "Das Fussa-Kirschblütenfest findet von Ende März bis Anfang April entlang des Tama-Flussdamms in Fussa City statt.",
+      ru: "Фестиваль цветения сакуры Фусса проходит с конца марта по начало апреля вдоль дамбы реки Тама в городе Фусса.",
+    },
+  },
+  {
+    id: "hamura-hana-mizu-matsuri",
+    date: "3月下旬〜4月中旬",
+    ja: "はむら花と水のまつり〜桜まつり〜",
+    en: "Hamura Flower and Water Festival (Cherry Blossom Festival)",
+    location: { ja: "羽村の堰", en: "Hamura Weir" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "羽村市の羽村の堰で、3月下旬から4月中旬にかけてはむら花と水のまつり（桜まつり）が開催されます。",
+      en: "The Hamura Flower and Water Festival (Cherry Blossom Festival) is held from late March to mid-April at Hamura Weir in Hamura City.",
+      vi: "Lễ hội hoa và nước Hamura (lễ hội hoa anh đào) được tổ chức từ cuối tháng 3 đến giữa tháng 4 tại đập Hamura, thành phố Hamura.",
+      zh: "羽村花与水之祭（樱花祭）于3月下旬至4月中旬在羽村市羽村堰举行。",
+      ko: "하무라 꽃과 물의 축제(벚꽃축제)는 3월 하순부터 4월 중순까지 하무라시 하무라 둑에서 열립니다.",
+      de: "Das Hamura-Blumen- und Wasserfest (Kirschblütenfest) findet von Ende März bis Mitte April am Hamura-Wehr in Hamura City statt.",
+      ru: "Фестиваль цветов и воды Хамура (фестиваль сакуры) проходит с конца марта по середину апреля у плотины Хамура в городе Хамура.",
+    },
+  },
+
+  // ================= April =================
+  {
+    id: "shiofune-tsutsuji-matsuri",
+    date: "4月中旬〜5月上旬",
+    ja: "塩船観音つつじ祭り",
+    en: "Shiofune Kannon-ji Azalea Festival",
+    location: { ja: "塩船観音寺・霞丘陵自然公園", en: "Shiofune Kannon-ji & Kasumi Hills Nature Park" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の塩船観音寺と霞丘陵自然公園で、4月中旬から5月上旬にかけて塩船観音つつじ祭りが開催されます。",
+      en: "The Shiofune Kannon-ji Azalea Festival is held from mid-April to early May at Shiofune Kannon-ji and Kasumi Hills Nature Park in Ome City.",
+      vi: "Lễ hội hoa đỗ quyên Shiofune Kannon-ji được tổ chức từ giữa tháng 4 đến đầu tháng 5 tại chùa Shiofune Kannon-ji và công viên thiên nhiên Kasumi Hills, thành phố Ome.",
+      zh: "盐船观音杜鹃花祭于4月中旬至5月上旬在青梅市盐船观音寺与霞丘陵自然公园举行。",
+      ko: "시오후네 관음사 철쭉축제는 4월 중순부터 5월 상순까지 오메시 시오후네 관음사와 카스미 구릉 자연공원에서 열립니다.",
+      de: "Das Shiofune-Kannon-ji-Azaleenfest findet von Mitte April bis Anfang Mai im Shiofune-Kannon-ji-Tempel und im Kasumi-Hügel-Naturpark in Ome City statt.",
+      ru: "Фестиваль азалий Сиофунэ Каннон-дзи проходит с середины апреля по начало мая в храме Сиофунэ Каннон-дзи и природном парке Касуми в городе Оме.",
+    },
+  },
+  {
+    id: "chofu-taisai",
+    date: "4月中旬",
+    ja: "調布大祭",
+    en: "Chofu Grand Festival",
+    location: { ja: "長淵地区", en: "Nagabuchi District" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "青梅市の長淵地区で、4月中旬に調布大祭が開催されます。",
+      en: "The Chofu Grand Festival is held in mid-April in the Nagabuchi district of Ome City.",
+      vi: "Đại lễ hội Chofu được tổ chức vào giữa tháng 4 tại khu vực Nagabuchi, thành phố Ome.",
+      zh: "调布大祭于4月中旬在青梅市长渊地区举行。",
+      ko: "조후대제는 4월 중순 오메시 나가부치 지구에서 열립니다.",
+      de: "Das Chofu-Großfest findet Mitte April im Stadtteil Nagabuchi von Ome City statt.",
+      ru: "Грандиозный праздник Тёфу проходит в середине апреля в районе Нагабути города Оме.",
+    },
+  },
+  {
+    id: "musashi-mitake-kendo-taikai",
+    date: "4月29日",
+    ja: "武蔵御嶽神社 奉納剣道大会",
+    en: "Musashi Mitake Shrine Dedicatory Kendo Tournament",
+    location: { ja: "武蔵御嶽神社大鳥居前広場", en: "Musashi Mitake Shrine Great Torii Plaza" },
+    image: images.events.themeMarathon,
+    description: {
+      ja: "青梅市の武蔵御嶽神社大鳥居前広場で、4月29日に奉納剣道大会が開催されます。",
+      en: "The Dedicatory Kendo Tournament is held on April 29 at the Great Torii Plaza of Musashi Mitake Shrine in Ome City.",
+      vi: "Giải đấu kiếm đạo dâng cúng được tổ chức vào ngày 29 tháng 4 tại quảng trường Đại Torii của đền Musashi Mitake, thành phố Ome.",
+      zh: "奉纳剑道大会于4月29日在青梅市武藏御嶽神社大鸟居前广场举行。",
+      ko: "봉납 검도대회는 4월 29일 오메시 무사시 미타케 신사 대도리이 앞 광장에서 열립니다.",
+      de: "Das Kendo-Weihturnier findet am 29. April auf dem Platz vor dem großen Torii des Musashi-Mitake-Schreins in Ome City statt.",
+      ru: "Турнир по кэндо в честь святилища проходит 29 апреля на площади перед Великими воротами тории Святилища Мусаси Митаке в городе Оме.",
+    },
+  },
+
+  // ================= May =================
+  {
+    id: "ome-taisai",
+    date: "5月2日・3日",
+    ja: "青梅大祭",
+    en: "Ome Grand Festival",
+    location: { ja: "青梅街道", en: "Ome Kaido" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "青梅市の青梅街道で、5月2日と3日に青梅大祭が開催されます。",
+      en: "The Ome Grand Festival is held on May 2 and 3 along Ome Kaido in Ome City.",
+      vi: "Đại lễ hội Ome được tổ chức vào ngày 2 và 3 tháng 5 trên đường Ome Kaido, thành phố Ome.",
+      zh: "青梅大祭于5月2日、3日在青梅市青梅街道举行。",
+      ko: "오메대제는 5월 2일과 3일 오메시 오메 가이도에서 열립니다.",
+      de: "Das Ome-Großfest findet am 2. und 3. Mai entlang der Ome Kaido in Ome City statt.",
+      ru: "Грандиозный праздник Оме проходит 2 и 3 мая на улице Оме-кайдо в городе Оме.",
+    },
+  },
+  {
+    id: "fussa-otako-age-taikai",
+    date: "5月5日",
+    ja: "大凧揚げ大会",
+    en: "Giant Kite Flying Contest",
+    location: { ja: "多摩川中央公園", en: "Tama River Central Park" },
+    image: images.events.themeMarathon,
+    description: {
+      ja: "福生市の多摩川中央公園で、5月5日に大凧揚げ大会が開催されます。",
+      en: "The Giant Kite Flying Contest is held on May 5 at Tama River Central Park in Fussa City.",
+      vi: "Cuộc thi thả diều khổng lồ được tổ chức vào ngày 5 tháng 5 tại công viên trung tâm sông Tama, thành phố Fussa.",
+      zh: "大风筝放飞大会于5月5日在福生市多摩川中央公园举行。",
+      ko: "대형 연날리기 대회는 5월 5일 후사시 다마강 중앙공원에서 열립니다.",
+      de: "Der Wettbewerb für das Fliegenlassen riesiger Drachen findet am 5. Mai im Tama River Central Park in Fussa City statt.",
+      ru: "Соревнование по запуску гигантских воздушных змеев проходит 5 мая в Центральном парке реки Тама в городе Фусса.",
+    },
+  },
+  {
+    id: "musashi-mitake-hinode-sai",
+    date: "5月8日",
+    ja: "武蔵御嶽神社日の出祭",
+    en: "Musashi Mitake Shrine Sunrise Festival",
+    location: { ja: "武蔵御嶽神社", en: "Musashi Mitake Shrine" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "青梅市の武蔵御嶽神社で、5月8日に日の出祭が執り行われます。",
+      en: "The Sunrise Festival is held on May 8 at Musashi Mitake Shrine in Ome City.",
+      vi: "Lễ hội bình minh được tổ chức vào ngày 8 tháng 5 tại đền Musashi Mitake, thành phố Ome.",
+      zh: "日出祭于5月8日在青梅市武藏御嶽神社举行。",
+      ko: "히노데제(해돋이 축제)는 5월 8일 오메시 무사시 미타케 신사에서 봉행됩니다.",
+      de: "Das Sonnenaufgangsfest wird am 8. Mai im Musashi-Mitake-Schrein in Ome City abgehalten.",
+      ru: "Праздник восхода солнца проходит 8 мая в Святилище Мусаси Митаке в городе Оме.",
+    },
+  },
+  {
+    id: "fussa-kagayaki-festival",
+    date: "5月第3日曜日",
+    ja: "ふっさ輝きフェスティバル",
+    en: "Fussa Kagayaki Festival",
+    location: { ja: "多摩川中央公園", en: "Tama River Central Park" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "福生市の多摩川中央公園で、5月第3日曜日にふっさ輝きフェスティバルが開催されます。",
+      en: "The Fussa Kagayaki Festival is held on the third Sunday of May at Tama River Central Park in Fussa City.",
+      vi: "Lễ hội Fussa Kagayaki được tổ chức vào Chủ nhật thứ ba của tháng 5 tại công viên trung tâm sông Tama, thành phố Fussa.",
+      zh: "福生光辉节于5月第三个星期日在福生市多摩川中央公园举行。",
+      ko: "후사 카가야키 페스티벌은 5월 셋째 일요일 후사시 다마강 중앙공원에서 열립니다.",
+      de: "Das Fussa-Kagayaki-Festival findet am dritten Sonntag im Mai im Tama River Central Park in Fussa City statt.",
+      ru: "Фестиваль Фусса Кагаяки проходит в третье воскресенье мая в Центральном парке реки Тама в городе Фусса.",
+    },
+  },
+  {
+    id: "fukiage-hanashobu-matsuri",
+    date: "5月下旬〜6月下旬",
+    ja: "吹上花しょうぶまつり",
+    en: "Fukiage Iris Festival",
+    location: { ja: "吹上しょうぶ公園", en: "Fukiage Iris Park" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の吹上しょうぶ公園で、5月下旬から6月下旬にかけて吹上花しょうぶまつりが開催されます。",
+      en: "The Fukiage Iris Festival is held from late May to late June at Fukiage Iris Park in Ome City.",
+      vi: "Lễ hội hoa diên vĩ Fukiage được tổ chức từ cuối tháng 5 đến cuối tháng 6 tại công viên hoa diên vĩ Fukiage, thành phố Ome.",
+      zh: "吹上花菖蒲祭于5月下旬至6月下旬在青梅市吹上花菖蒲公园举行。",
+      ko: "후키아게 창포축제는 5월 하순부터 6월 하순까지 오메시 후키아게 창포공원에서 열립니다.",
+      de: "Das Fukiage-Schwertlilienfest findet von Ende Mai bis Ende Juni im Fukiage-Schwertlilien-Park in Ome City statt.",
+      ru: "Фестиваль ирисов Фукиагэ проходит с конца мая по конец июня в парке ирисов Фукиагэ в городе Оме.",
+    },
+  },
+  {
+    id: "shiofune-saito-goma-hiwatari",
+    date: "5月3日",
+    ja: "柴燈護摩供・火渡り荒行",
+    en: "Shiofune Saito Goma Fire Ritual",
+    location: { ja: "塩船観音寺護摩堂前広場", en: "Shiofune Kannon-ji Goma Hall Plaza" },
+    image: images.events.themeFireRitual,
+    description: {
+      ja: "青梅市の塩船観音寺護摩堂前広場で、5月3日に柴燈護摩供と火渡り荒行が行われます。",
+      en: "The Saito Goma fire ceremony and fire-walking ritual are held on May 3 at the Goma Hall Plaza of Shiofune Kannon-ji in Ome City.",
+      vi: "Nghi lễ đốt lửa Saito Goma và đi trên lửa được tổ chức vào ngày 3 tháng 5 tại quảng trường trước điện Goma của chùa Shiofune Kannon-ji, thành phố Ome.",
+      zh: "柴燈护摩法会与过火修行于5月3日在青梅市盐船观音寺护摩堂前广场举行。",
+      ko: "사이토고마 화제와 불 건너기 수행은 5월 3일 오메시 시오후네 관음사 고마도 앞 광장에서 열립니다.",
+      de: "Die Saito-Goma-Feuerzeremonie und das Feuerlauf-Ritual finden am 3. Mai auf dem Platz vor der Goma-Halle des Shiofune-Kannon-ji-Tempels in Ome City statt.",
+      ru: "Огненная церемония Сайто Гома и ритуал хождения по огню проходят 3 мая на площади перед залом Гома храма Сиофунэ Каннон-дзи в городе Оме.",
+    },
+  },
+  {
+    id: "kamanofuchi-shinryoku-sai",
+    date: "5月上旬",
+    ja: "釜の淵新緑祭〜生涯学習フェスティバル〜",
+    en: "Kamanofuchi Fresh Greenery Festival (Lifelong Learning Festival)",
+    location: { ja: "釜の淵公園付近", en: "Near Kamanofuchi Park" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の釜の淵公園付近で、5月上旬に釜の淵新緑祭（生涯学習フェスティバル）が開催されます。",
+      en: "The Kamanofuchi Fresh Greenery Festival (Lifelong Learning Festival) is held in early May near Kamanofuchi Park in Ome City.",
+      vi: "Lễ hội cây xanh tươi mới Kamanofuchi (Lễ hội học tập suốt đời) được tổ chức vào đầu tháng 5 gần công viên Kamanofuchi, thành phố Ome.",
+      zh: "釜渊新绿祭（终身学习节）于5月上旬在青梅市釜渊公园附近举行。",
+      ko: "카마노후치 신록제(평생학습 페스티벌)는 5월 상순 오메시 카마노후치 공원 인근에서 열립니다.",
+      de: "Das Kamanofuchi-Frühlingsgrün-Fest (Fest des lebenslangen Lernens) findet Anfang Mai in der Nähe des Kamanofuchi-Parks in Ome City statt.",
+      ru: "Фестиваль свежей зелени Каманофути (фестиваль непрерывного обучения) проходит в начале мая рядом с парком Каманофути в городе Оме.",
+    },
+  },
+
+  // ================= June =================
+  {
+    id: "fussa-hotaru-matsuri",
+    date: "6月中旬",
+    ja: "福生ほたる祭り",
+    en: "Fussa Firefly Festival",
+    location: { ja: "ほたる公園、玉川上水周辺（青梅橋付近）", en: "Hotaru Park and Tamagawa Josui (near Ome Bridge)" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "福生市のほたる公園と玉川上水周辺（青梅橋付近）で、6月中旬に福生ほたる祭りが開催されます。",
+      en: "The Fussa Firefly Festival is held in mid-June at Hotaru Park and along Tamagawa Josui near Ome Bridge in Fussa City.",
+      vi: "Lễ hội đom đóm Fussa được tổ chức vào giữa tháng 6 tại công viên Hotaru và dọc kênh Tamagawa Josui gần cầu Ome, thành phố Fussa.",
+      zh: "福生萤火虫节于6月中旬在福生市萤火虫公园及玉川上水沿岸（青梅桥附近）举行。",
+      ko: "후사 반딧불이 축제는 6월 중순 후사시 반딧불이공원과 다마가와 조스이 주변(오메바시 인근)에서 열립니다.",
+      de: "Das Fussa-Glühwürmchenfest findet Mitte Juni im Hotaru-Park und entlang des Tamagawa Josui nahe der Ome-Brücke in Fussa City statt.",
+      ru: "Фестиваль светлячков Фусса проходит в середине июня в парке Хотару и вдоль канала Тамагава Дзёсуй у моста Оме в городе Фусса.",
+    },
+  },
+  {
+    id: "shimin-ongaku-sai",
+    date: "6月中旬",
+    ja: "市民音楽祭",
+    en: "Citizens' Music Festival",
+    location: { ja: "市民会館", en: "Civic Hall" },
+    image: images.events.themeArts,
+    description: {
+      ja: "福生市の市民会館で、6月中旬に市民音楽祭が開催されます。",
+      en: "The Citizens' Music Festival is held in mid-June at the Civic Hall in Fussa City.",
+      vi: "Lễ hội âm nhạc thị dân được tổ chức vào giữa tháng 6 tại hội trường thị dân, thành phố Fussa.",
+      zh: "市民音乐祭于6月中旬在福生市市民会馆举行。",
+      ko: "시민음악제는 6월 중순 후사시 시민회관에서 열립니다.",
+      de: "Das Bürgermusikfest findet Mitte Juni in der Stadthalle von Fussa City statt.",
+      ru: "Фестиваль музыки горожан проходит в середине июня в Общественном центре города Фусса.",
+    },
+  },
+
+  // ================= July =================
+  {
+    id: "rengeshouma-matsuri",
+    date: "7月下旬〜8月末",
+    ja: "レンゲショウマまつり",
+    en: "Rengeshoma Festival",
+    location: { ja: "御岳山富士峰園地他", en: "Mount Mitake Fujimine Garden and vicinity" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の御岳山富士峰園地などで、7月下旬から8月末にかけてレンゲショウマまつりが開催されます。",
+      en: "The Rengeshoma Festival is held from late July to the end of August at Fujimine Garden and other spots on Mount Mitake in Ome City.",
+      vi: "Lễ hội hoa Rengeshoma được tổ chức từ cuối tháng 7 đến cuối tháng 8 tại vườn Fujimine và các khu vực khác trên núi Mitake, thành phố Ome.",
+      zh: "莲花升麻祭于7月下旬至8月末在青梅市御岳山富士峰园地等地举行。",
+      ko: "렌게쇼마 축제는 7월 하순부터 8월 말까지 오메시 미타케산 후지미네 정원 일대에서 열립니다.",
+      de: "Das Rengeshoma-Fest findet von Ende Juli bis Ende August im Fujimine-Garten und weiteren Orten auf dem Berg Mitake in Ome City statt.",
+      ru: "Фестиваль рэнгэсёма проходит с конца июля по конец августа в саду Фудзиминэ и других местах горы Митаке в городе Оме.",
+    },
+  },
+  {
+    id: "yakumo-matsuri",
+    date: "7月下旬",
+    ja: "八雲まつり",
+    en: "Yakumo Festival",
+    location: { ja: "福生市内全域", en: "Throughout Fussa City" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "福生市内全域で、7月下旬に八雲まつりが開催されます。",
+      en: "The Yakumo Festival is held in late July throughout Fussa City.",
+      vi: "Lễ hội Yakumo được tổ chức vào cuối tháng 7 trên khắp thành phố Fussa.",
+      zh: "八云祭于7月下旬在福生市全域举行。",
+      ko: "야쿠모 축제는 7월 하순 후사시 전역에서 열립니다.",
+      de: "Das Yakumo-Fest findet Ende Juli in ganz Fussa City statt.",
+      ru: "Фестиваль Якумо проходит в конце июля по всему городу Фусса.",
+    },
+  },
+  {
+    id: "kyodo-geino-matsuri",
+    date: "7月下旬〜8月上旬",
+    ja: "郷土芸能まつり",
+    en: "Local Performing Arts Festival",
+    location: { ja: "秋川駅北口駅前大通り", en: "Akigawa Station North Exit Avenue" },
+    image: images.events.themeArts,
+    description: {
+      ja: "あきる野市の秋川駅北口駅前大通りで、7月下旬から8月上旬にかけて郷土芸能まつりが開催されます。",
+      en: "The Local Performing Arts Festival is held from late July to early August along the avenue in front of Akigawa Station's north exit in Akiruno City.",
+      vi: "Lễ hội nghệ thuật biểu diễn địa phương được tổ chức từ cuối tháng 7 đến đầu tháng 8 trên đại lộ trước cửa Bắc ga Akigawa, thành phố Akiruno.",
+      zh: "乡土艺能祭于7月下旬至8月上旬在秋留野市秋川站北口前大道举行。",
+      ko: "향토예능축제는 7월 하순부터 8월 상순까지 아키루노시 아키가와역 북쪽 출구 앞 대로에서 열립니다.",
+      de: "Das Fest der lokalen darstellenden Künste findet von Ende Juli bis Anfang August entlang der Straße vor dem Nordausgang des Bahnhofs Akigawa in Akiruno City statt.",
+      ru: "Фестиваль местного исполнительского искусства проходит с конца июля по начало августа на проспекте перед северным выходом станции Акигава в городе Акируно.",
+    },
+  },
+
+  // ================= September =================
+  {
+    id: "mitake-jinja-sairei",
+    date: "9月1日",
+    ja: "御嶽神社祭礼",
+    en: "Mitake Shrine Festival",
+    location: { ja: "吉野岳", en: "Mount Yoshino" },
+    image: images.events.themeMatsuri,
+    description: {
+      ja: "瑞穂町の吉野岳で、9月1日に御嶽神社の祭礼が執り行われます。",
+      en: "The Mitake Shrine Festival is held on September 1 at Mount Yoshino in Mizuho Town.",
+      vi: "Lễ hội đền Mitake được tổ chức vào ngày 1 tháng 9 tại núi Yoshino, thị trấn Mizuho.",
+      zh: "御岳神社祭礼于9月1日在瑞穗町吉野岳举行。",
+      ko: "미타케신사 제례는 9월 1일 미즈호마치 요시노다케에서 봉행됩니다.",
+      de: "Das Mitake-Schrein-Fest wird am 1. September auf dem Berg Yoshino in Mizuho Town abgehalten.",
+      ru: "Праздник святилища Митакэ проходит 1 сентября на горе Ёсино в городе Мидзухо.",
+    },
+  },
+  {
+    id: "eiji-ki",
+    date: "9月7日",
+    ja: "英治忌",
+    en: "Eiji Ki (Yoshikawa Eiji Memorial Day)",
+    location: { ja: "吉川英治記念館", en: "Yoshikawa Eiji Memorial Hall" },
+    image: images.events.themeArts,
+    description: {
+      ja: "青梅市の吉川英治記念館で、9月7日に英治忌が行われます。",
+      en: "Eiji Ki, a memorial observance for novelist Yoshikawa Eiji, is held on September 7 at the Yoshikawa Eiji Memorial Hall in Ome City.",
+      vi: "Lễ tưởng niệm Eiji Ki, dành cho nhà văn Yoshikawa Eiji, được tổ chức vào ngày 7 tháng 9 tại Nhà tưởng niệm Yoshikawa Eiji, thành phố Ome.",
+      zh: "纪念小说家吉川英治的英治忌于9月7日在青梅市吉川英治纪念馆举行。",
+      ko: "소설가 요시카와 에이지를 기리는 에이지키는 9월 7일 오메시 요시카와 에이지 기념관에서 열립니다.",
+      de: "Eiji Ki, eine Gedenkveranstaltung für den Schriftsteller Yoshikawa Eiji, findet am 7. September in der Yoshikawa-Eiji-Gedenkhalle in Ome City statt.",
+      ru: "Эйдзи Ки, памятная церемония в честь писателя Ёсикавы Эйдзи, проходит 7 сентября в Мемориальном зале Ёсикавы Эйдзи в городе Оме.",
+    },
+  },
+
+  // ================= October =================
+  {
+    id: "nihon-sangaku-taikyu-race",
+    date: "10月上旬",
+    ja: "日本山岳耐久レース",
+    en: "Japan Mountain Endurance Race",
+    location: { ja: "奥多摩全山", en: "The mountains of Okutama" },
+    image: images.events.themeMarathon,
+    description: {
+      ja: "あきる野市を起点に奥多摩の山々を舞台として、10月上旬に日本山岳耐久レースが開催されます。",
+      en: "The Japan Mountain Endurance Race is held in early October, starting in Akiruno City and running through the mountains of Okutama.",
+      vi: "Giải chạy bền địa hình núi Nhật Bản được tổ chức vào đầu tháng 10, xuất phát từ thành phố Akiruno và băng qua các dãy núi Okutama.",
+      zh: "日本山岳耐力赛于10月上旬举行，起点为秋留野市，赛道贯穿奥多摩群山。",
+      ko: "일본 산악 내구 레이스는 10월 상순 아키루노시를 출발해 오쿠타마의 산들을 무대로 열립니다.",
+      de: "Das japanische Bergausdauerrennen findet Anfang Oktober statt, startet in Akiruno City und führt durch die Berge von Okutama.",
+      ru: "Японская горная гонка на выносливость проходит в начале октября, стартуя в городе Акируно и пролегая через горы Окутамы.",
+    },
+  },
+  {
+    id: "tenku-momiji-matsuri",
+    date: "10月中旬〜11月中旬",
+    ja: "天空もみじまつり",
+    en: "Tenku Autumn Leaves Festival",
+    location: { ja: "御岳山", en: "Mount Mitake" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の御岳山で、10月中旬から11月中旬にかけて天空もみじまつりが開催されます。",
+      en: "The Tenku Autumn Leaves Festival is held from mid-October to mid-November on Mount Mitake in Ome City.",
+      vi: "Lễ hội lá đỏ Tenku được tổ chức từ giữa tháng 10 đến giữa tháng 11 trên núi Mitake, thành phố Ome.",
+      zh: "天空红叶祭于10月中旬至11月中旬在青梅市御岳山举行。",
+      ko: "텐쿠 단풍축제는 10월 중순부터 11월 중순까지 오메시 미타케산에서 열립니다.",
+      de: "Das Tenku-Herbstlaubfest findet von Mitte Oktober bis Mitte November auf dem Berg Mitake in Ome City statt.",
+      ru: "Фестиваль осенней листвы Тэнку проходит с середины октября по середину ноября на горе Митаке в городе Оме.",
+    },
+  },
+  {
+    id: "fussa-international-fair",
+    date: "10月中旬",
+    ja: "福生インターナショナルフェア",
+    en: "Fussa International Fair",
+    location: { ja: "横田基地前商店街周辺", en: "Near the shopping street by Yokota Air Base" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "福生市の横田基地前商店街周辺で、10月中旬に福生インターナショナルフェアが開催されます。",
+      en: "The Fussa International Fair is held in mid-October near the shopping street by Yokota Air Base in Fussa City.",
+      vi: "Hội chợ quốc tế Fussa được tổ chức vào giữa tháng 10 gần khu phố mua sắm trước căn cứ không quân Yokota, thành phố Fussa.",
+      zh: "福生国际集市于10月中旬在福生市横田基地前商店街附近举行。",
+      ko: "후사 국제 페어는 10월 중순 후사시 요코타 기지 앞 상점가 일대에서 열립니다.",
+      de: "Die Fussa International Fair findet Mitte Oktober in der Nähe der Einkaufsstraße vor der Yokota Air Base in Fussa City statt.",
+      ru: "Международная ярмарка Фусса проходит в середине октября рядом с торговой улицей у авиабазы Йокота в городе Фусса.",
+    },
+  },
+  {
+    id: "mitake-keikoku-shuushoku-matsuri",
+    date: "10月下旬〜11月下旬",
+    ja: "みたけ渓谷秋色まつり",
+    en: "Mitake Gorge Autumn Colors Festival",
+    location: { ja: "御岳渓谷", en: "Mitake Gorge" },
+    image: images.events.themeNatureSeasonal,
+    description: {
+      ja: "青梅市の御岳渓谷で、10月下旬から11月下旬にかけてみたけ渓谷秋色まつりが開催されます。",
+      en: "The Mitake Gorge Autumn Colors Festival is held from late October to late November at Mitake Gorge in Ome City.",
+      vi: "Lễ hội sắc thu hẻm núi Mitake được tổ chức từ cuối tháng 10 đến cuối tháng 11 tại hẻm núi Mitake, thành phố Ome.",
+      zh: "御岳溪谷秋色祭于10月下旬至11月下旬在青梅市御岳溪谷举行。",
+      ko: "미타케 계곡 가을단풍축제는 10월 하순부터 11월 하순까지 오메시 미타케 계곡에서 열립니다.",
+      de: "Das Herbstfarbenfest der Mitake-Schlucht findet von Ende Oktober bis Ende November in der Mitake-Schlucht in Ome City statt.",
+      ru: "Фестиваль осенних красок ущелья Митаке проходит с конца октября по конец ноября в ущелье Митаке в городе Оме.",
+    },
+  },
+
+  // ================= November =================
+  {
+    id: "ome-sangyo-kanko-matsuri",
+    date: "11月上旬",
+    ja: "青梅産業観光まつり",
+    en: "Ome Industry & Tourism Festival",
+    location: { ja: "永山公園", en: "Nagayama Park" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "青梅市の永山公園で、11月上旬に青梅産業観光まつりが開催されます。",
+      en: "The Ome Industry & Tourism Festival is held in early November at Nagayama Park in Ome City.",
+      vi: "Lễ hội công nghiệp và du lịch Ome được tổ chức vào đầu tháng 11 tại công viên Nagayama, thành phố Ome.",
+      zh: "青梅产业观光祭于11月上旬在青梅市永山公园举行。",
+      ko: "오메 산업관광축제는 11월 상순 오메시 나가야마 공원에서 열립니다.",
+      de: "Das Ome-Industrie- und Tourismusfest findet Anfang November im Nagayama-Park in Ome City statt.",
+      ru: "Фестиваль промышленности и туризма Оме проходит в начале ноября в парке Нагаяма в городе Оме.",
+    },
+  },
+  {
+    id: "omejuku-art-festival",
+    date: "11月中旬",
+    ja: "青梅宿アートフェスティバル",
+    en: "Omejuku Art Festival",
+    location: { ja: "青梅駅周辺", en: "Around Ome Station" },
+    image: images.events.themeArts,
+    description: {
+      ja: "青梅市の青梅駅周辺で、11月中旬に青梅宿アートフェスティバルが開催されます。",
+      en: "The Omejuku Art Festival is held in mid-November around Ome Station in Ome City.",
+      vi: "Lễ hội nghệ thuật Omejuku được tổ chức vào giữa tháng 11 quanh ga Ome, thành phố Ome.",
+      zh: "青梅宿艺术节于11月中旬在青梅市青梅站周边举行。",
+      ko: "오메주쿠 아트페스티벌은 11월 중순 오메시 오메역 일대에서 열립니다.",
+      de: "Das Omejuku-Kunstfestival findet Mitte November rund um den Bahnhof Ome in Ome City statt.",
+      ru: "Художественный фестиваль Омэдзюку проходит в середине ноября вокруг станции Оме в городе Оме.",
+    },
+  },
+  {
+    id: "nishitama-sports-meet",
+    date: "11月第3日曜日",
+    ja: "西多摩地域広域行政圏体育大会",
+    en: "Nishitama Regional Sports Meet",
+    location: { ja: "※毎年会場が変わります", en: "Venue varies each year" },
+    image: images.events.themeMarathon,
+    description: {
+      ja: "西多摩地域全域を対象に、11月第3日曜日に西多摩地域広域行政圏体育大会が開催されます。会場は毎年異なります。",
+      en: "The Nishitama Regional Sports Meet, covering the whole Nishitama area, is held on the third Sunday of November; the venue changes each year.",
+      vi: "Đại hội thể thao khu vực Nishi Tama, bao trùm toàn bộ khu vực Nishi Tama, được tổ chức vào Chủ nhật thứ ba của tháng 11; địa điểm thay đổi hằng năm.",
+      zh: "西多摩地区广域行政圈体育大会面向西多摩全域，于11月第三个星期日举行，会场每年不同。",
+      ko: "니시타마 지역 전체를 대상으로 하는 니시타마 지역 광역행정권 체육대회는 11월 셋째 일요일에 열리며, 개최 장소는 매년 바뀝니다.",
+      de: "Das regionale Sportfest von Nishitama, das die gesamte Nishitama-Region umfasst, findet am dritten Sonntag im November statt; der Austragungsort wechselt jedes Jahr.",
+      ru: "Региональные спортивные игры Ниситама, охватывающие весь район Ниситама, проходят в третье воскресенье ноября; место проведения меняется каждый год.",
+    },
+  },
+  {
+    id: "fussa-fureai-festival",
+    date: "11月上旬",
+    ja: "福生ふれあいフェスティバル",
+    en: "Fussa Fureai Festival",
+    location: { ja: "市営福生野球場、市民会館他", en: "Fussa Municipal Baseball Stadium, Civic Hall, and other venues" },
+    image: images.events.themeMarket,
+    description: {
+      ja: "福生市の市営福生野球場や市民会館などで、11月上旬に福生ふれあいフェスティバルが開催されます。",
+      en: "The Fussa Fureai Festival is held in early November at the Fussa Municipal Baseball Stadium, the Civic Hall, and other venues in Fussa City.",
+      vi: "Lễ hội giao lưu Fussa được tổ chức vào đầu tháng 11 tại sân bóng chày thành phố Fussa, hội trường thị dân và các địa điểm khác.",
+      zh: "福生交流节于11月上旬在福生市立棒球场、市民会馆等地举行。",
+      ko: "후사 후레아이 페스티벌은 11월 상순 후사시 시영 야구장, 시민회관 등지에서 열립니다.",
+      de: "Das Fussa-Fureai-Fest findet Anfang November im städtischen Baseballstadion, der Stadthalle und weiteren Orten in Fussa City statt.",
+      ru: "Фестиваль общения Фусса Фуреаи проходит в начале ноября на муниципальном бейсбольном стадионе, в Общественном центре и других местах города Фусса.",
+    },
+  },
+
+  // ================= December =================
+  {
+    id: "hossawa-fuyu-matsuri",
+    date: "12月〜3月中旬",
+    ja: "払沢の滝冬まつり",
+    en: "Hossawa Falls Winter Festival",
+    location: { ja: "払沢の滝", en: "Hossawa Falls" },
+    image: images.events.themeFireworks,
+    description: {
+      ja: "檜原村の払沢の滝で、12月から3月中旬にかけて冬まつりが開催されます。",
+      en: "The Hossawa Falls Winter Festival is held from December to mid-March at Hossawa Falls in Hinohara Village.",
+      vi: "Lễ hội mùa đông thác Hossawa được tổ chức từ tháng 12 đến giữa tháng 3 tại thác Hossawa, làng Hinohara.",
+      zh: "払泽瀑布冬祭于12月至3月中旬在桧原村払泽瀑布举行。",
+      ko: "호사와 폭포 겨울축제는 12월부터 3월 중순까지 히노하라촌 호사와 폭포에서 열립니다.",
+      de: "Das Winterfest der Hossawa-Fälle findet von Dezember bis Mitte März an den Hossawa-Fällen in Hinohara Village statt.",
+      ru: "Зимний фестиваль водопада Хоссава проходит с декабря по середину марта у водопада Хоссава в деревне Хинохара.",
+    },
+  },
+  {
+    id: "ougu-illumination",
+    date: "12月上旬〜下旬",
+    ja: "大久野イルミネーション",
+    en: "Ogu Illumination",
+    location: { ja: "大久野地区", en: "Ogu District" },
+    image: images.events.themeFireworks,
+    description: {
+      ja: "日の出町の大久野地区で、12月上旬から下旬にかけてイルミネーションが行われます。",
+      en: "The Ogu Illumination is held from early to late December in the Ogu district of Hinode Town.",
+      vi: "Sự kiện ánh sáng Ogu được tổ chức từ đầu đến cuối tháng 12 tại khu vực Ogu, thị trấn Hinode.",
+      zh: "大久野灯光节于12月上旬至下旬在日之出町大久野地区举行。",
+      ko: "오구 일루미네이션은 12월 초부터 말까지 히노데마치 오구 지구에서 열립니다.",
+      de: "Die Ogu-Illumination findet von Anfang bis Ende Dezember im Ogu-Bezirk von Hinode Town statt.",
+      ru: "Иллюминация Огу проходит с начала по конец декабря в районе Огу города Хинодэ.",
+    },
+  },
+];
+
+/** otherMonthEvents grouped by month (1-12, skipping 8/August). */
+export const otherMonthEventsByMonth: Record<number, EventItem[]> = otherMonthEvents.reduce(
+  (acc, event) => {
+    const month = EVENT_MONTH[event.id];
+    if (month === undefined) {
+      throw new Error(`events-other-months.ts: no month mapped for id "${event.id}"`);
+    }
+    (acc[month] ??= []).push(event);
+    return acc;
+  },
+  {} as Record<number, EventItem[]>
+);

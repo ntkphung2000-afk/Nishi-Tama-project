@@ -1,5 +1,6 @@
 import { images } from "@/config/images";
 import type { Localized } from "@/lib/i18n";
+import { otherMonthEventsByMonth } from "./events-other-months";
 
 /* ------------------------------------------------------------------
  * EVENTS — single source of truth for featured/seasonal events.
@@ -252,3 +253,19 @@ export const augustEvents: EventItem[] = [
     },
   },
 ];
+
+/* ------------------------------------------------------------------
+ * All 12 months, for the Events page month selector. August points at
+ * the existing, unmodified `augustEvents`; every other month comes
+ * from `otherMonthEventsByMonth` (src/data/events-other-months.ts).
+ * ------------------------------------------------------------------ */
+
+export type MonthEvents = { month: number; events: EventItem[] };
+
+export const eventsByMonth: MonthEvents[] = Array.from({ length: 12 }, (_, i) => {
+  const month = i + 1;
+  return {
+    month,
+    events: month === 8 ? augustEvents : (otherMonthEventsByMonth[month] ?? []),
+  };
+});

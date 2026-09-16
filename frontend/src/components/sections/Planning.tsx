@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
-import { durations, faqs, guideSections, interests, itineraries } from "@/data/content";
+import { durations, interests, itineraries } from "@/data/itineraries";
+import { guideSections } from "@/data/guideSections";
+import { faqs } from "@/data/faqs";
 import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 

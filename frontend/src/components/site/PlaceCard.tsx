@@ -1,6 +1,6 @@
 import { useLang } from "@/lib/i18n";
 import { x } from "@/lib/dictionary-extra";
-import { categoryLabel } from "@/lib/placeCategoryLabels";
+import { categoryLabel } from "@/data/categories";
 import { buildReportMailtoUrl } from "@/lib/reportIssue";
 import { stationById } from "@/data/stations";
 import type { Place } from "@/data/places";

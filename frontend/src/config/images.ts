@@ -16,7 +16,14 @@ export const images = {
   // MAIN WEBSITE IMAGES
   // ============================================================
 
-  hero: "/images/nishitama-hero.jpg",
+  hero: "/images/hero/nishitama-hero.jpg",
+  // Cinematic Hero background sequence, kept in its own folder
+  // (public/images/hero/) for easy management. Only genuinely scenic
+  // photographs belong here — the original nishitama-hero(1).JPG and
+  // nishitama-hero(2).JPG snapshots (a station signpost, a hand holding a
+  // notebook) were tourist snapshots, not landscape photography, and have
+  // since been removed/replaced.
+  heroScenes: ["/images/hero/nishitama-hero.jpg", "/images/hero/nishitama-hero(1).jpg"],
   nishitama: "/images/nishitama-overview.jpg",
 
   // ============================================================
@@ -153,17 +160,17 @@ export const images = {
 // ============================================================
 
 experiences: {
-  nature: "/images/experiences/experience-nature.JPG",
-  culture: "/images/experiences/experience-culture.JPG",
-  food: "/images/experiences/experience-food.JPG",
-  outdoor: "/images/experiences/experience-outdoor.JPG",
-  seasonal: "/images/experiences/experience-seasonal.JPG",
+  nature: "/images/experiences/experience-nature.jpg",
+  culture: "/images/experiences/experience-culture.jpg",
+  food: "/images/experiences/experience-food.jpg",
+  outdoor: "/images/experiences/experience-outdoor.jpg",
+  seasonal: "/images/experiences/experience-seasonal.jpg",
 
   // Showa retro experience
-  showa: "/images/experiences/experience-showa.JPG",
+  showa: "/images/experiences/experience-showa.jpg",
 
   // Samurai / traditional Japanese culture
-  samurai: "/images/experiences/experience-samurai.JPG",
+  samurai: "/images/experiences/experience-samurai.jpg",
 },
 
   // ============================================================
@@ -175,11 +182,21 @@ experiences: {
   omeFireworks: "/images/events/event-ome-fireworks.jpg",
   akirunoSummer: "/images/events/event-akiruno-summer.jpg",
   fussaTanabata: "/images/events/event-fussa-tanabata.jpg",
-  hinodeShishimai: "/images/events/event-hinode-shishimai.jpg",
-  okutamaFireworks: "/images/events/event-okutama-fireworks.jpg",
-  ekinishi: "/images/events/event-ekinishi.jpg",
-  hossawaMatsuri: "/images/events/event-hossawa-matsuri.jpg",
-  yoruichi: "/images/events/event-yoruichi.jpg",
+  hinodeShishimai: "/images/events/event-hinode-shishimai.svg",
+  okutamaFireworks: "/images/events/event-okutama-fireworks.svg",
+  ekinishi: "/images/events/event-ekinishi.svg",
+  hossawaMatsuri: "/images/events/event-hossawa-matsuri.svg",
+  yoruichi: "/images/events/event-yoruichi.svg",
+
+  // Placeholder theme illustrations for the 35 new (non-August) events —
+  // one monoline sketch reused per theme, swap for real photos later.
+  themeMatsuri: "/images/events/event-theme-matsuri.svg",
+  themeNatureSeasonal: "/images/events/event-theme-nature-seasonal.svg",
+  themeFireRitual: "/images/events/event-theme-fire-ritual.svg",
+  themeMarathon: "/images/events/event-theme-marathon.svg",
+  themeMarket: "/images/events/event-theme-market.svg",
+  themeArts: "/images/events/event-theme-arts.svg",
+  themeFireworks: "/images/events/event-theme-fireworks.svg",
 },
 
   // ============================================================

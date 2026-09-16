@@ -1,7 +1,7 @@
 import { images } from "@/config/images";
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
-import { areas } from "@/data/content";
+import { areas } from "@/data/areas";
 import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 import { Figure } from "../site/Figure";

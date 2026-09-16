@@ -1,3 +1,5 @@
+import type { Localized } from "./i18n";
+
 /** UI strings. Add a locale key to any entry to translate it later. */
 export const ui = {
   brand: {
@@ -579,12 +581,12 @@ export const ui = {
       ru: "Что происходит в августе",
     },
     lead: {
-      en: "Summer is festival season across Nishi Tama. Dates are based on published local schedules — please check with organisers before travelling.",
-      ja: "夏は西多摩の祭りの季節です。日程は変更となる場合があります。お出かけ前に主催者情報をご確認ください。",
-      vi: "Mùa hè là mùa lễ hội trên toàn Nishi Tama. Ngày tháng dựa trên lịch địa phương đã công bố — vui lòng kiểm tra với ban tổ chức trước khi đi.",
-      zh: "夏季是西多摩的节庆季节。日期基于当地公布的日程——出行前请与组织者确认。",
-      ko: "여름은 니시타마 전역이 축제 시즌입니다. 날짜는 공개된 지역 일정에 따라 달라질 수 있으니 여행 전에 주최 측에 확인하세요.",      de: "Der Sommer ist Festivalzeit in ganz Nishi Tama. Die Termine beruhen auf veröffentlichten lokalen Plänen — bitte prüfen Sie vor der Reise bei den Veranstaltern.",
-      ru: "Лето — сезон фестивалей по всему Ниси Тама. Даты основаны на опубликованных местных расписаниях — перед поездкой уточните у организаторов.",
+      en: "Dates are based on published local schedules — please check with organisers before travelling.",
+      ja: "日程は変更となる場合があります。お出かけ前に主催者情報をご確認ください。",
+      vi: "Ngày tháng dựa trên lịch địa phương đã công bố — vui lòng kiểm tra với ban tổ chức trước khi đi.",
+      zh: "日期基于当地公布的日程——出行前请与组织者确认。",
+      ko: "날짜는 공개된 지역 일정에 따라 달라질 수 있으니 여행 전에 주최 측에 확인하세요.",      de: "Die Termine beruhen auf veröffentlichten lokalen Plänen — bitte prüfen Sie vor der Reise bei den Veranstaltern.",
+      ru: "Даты основаны на опубликованных местных расписаниях — перед поездкой уточните у организаторов.",
     },
     featured: {
       en: "Featured",
@@ -593,6 +595,42 @@ export const ui = {
       zh: "精选",
       ko: "추천",      de: "Empfohlen",
       ru: "Рекомендуемые",
+    },
+    months: {
+      en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      ja: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+      vi: ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12"],
+      zh: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+      ko: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+      de: ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."],
+      ru: ["янв", "фев", "март", "апр", "май", "июнь", "июль", "авг", "сен", "окт", "ноя", "дек"],
+    } as Localized<string[]>,
+    monthNames: {
+      en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      ja: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+      vi: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+      zh: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+      ko: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+      de: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+      ru: ["январе", "феврале", "марте", "апреле", "мае", "июне", "июле", "августе", "сентябре", "октябре", "ноябре", "декабре"],
+    } as Localized<string[]>,
+    noEventsThisMonth: {
+      en: "No listed events this month yet.",
+      ja: "今月の掲載イベントはまだありません。",
+      vi: "Chưa có sự kiện nào được liệt kê trong tháng này.",
+      zh: "本月暂无已公布的活动。",
+      ko: "이번 달에 등록된 행사가 아직 없습니다.",
+      de: "Für diesen Monat sind noch keine Veranstaltungen gelistet.",
+      ru: "В этом месяце пока нет запланированных мероприятий.",
+    },
+    whatsHappeningIn: {
+      en: "What's happening in",
+      ja: "のイベント",
+      vi: "Điều gì diễn ra vào",
+      zh: "发生了什么",
+      ko: "에 어떤 일이 있나요",
+      de: "Was passiert im",
+      ru: "Что происходит в",
     },
   },
 

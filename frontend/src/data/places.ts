@@ -369,6 +369,7 @@ export const places: Place[] = [
   {
     id: "higashi-ome-place",
     stationId: "higashi-ome",
+    nameEn: "Shiromaru Dam Fish Ladder",
     nameJa: "白丸ダム魚道",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -460,6 +461,7 @@ export const places: Place[] = [
     id: "kabe-place",
     stationId: "kabe",
     verificationStatus: "needs_manual_check",
+    nameEn: "Kabe Onsen Ume no Yu",
     nameJa: "河辺温泉 梅の湯",
     groups: ["onsen"],
     categoryRaw: "Onsen",
@@ -481,6 +483,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-2",
     stationId: "kabe",
+    nameEn: "Umeju-an",
     nameJa: "梅寿庵",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -501,6 +504,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-3",
     stationId: "kabe",
+    nameEn: "Cafe Bakery Primum",
     nameJa: "カフェベーカリープリュム",
     groups: ["cafe"],
     categoryRaw: "Café & Bakery",
@@ -522,6 +526,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-4",
     stationId: "kabe",
+    nameEn: "Masheri Anju",
     nameJa: "マシェリーアンジュ",
     groups: ["cafe"],
     categoryRaw: "Sweets",
@@ -543,6 +548,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-5",
     stationId: "kabe",
+    nameEn: "Ome no Oimoya Himitsu Kichi",
     nameJa: "青梅のおいもや ひみつきち",
     groups: ["food"],
     categoryRaw: "Local Food",
@@ -564,6 +570,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-6",
     stationId: "kabe",
+    nameEn: "Yakiton Sekichu",
     nameJa: "やきとん 関忠",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -585,6 +592,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-7",
     stationId: "kabe",
+    nameEn: "Restaurant Toscana",
     nameJa: "レストラン トスカーナ",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -606,6 +614,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-8",
     stationId: "kabe",
+    nameEn: "Tempura Kawaki",
     nameJa: "天ぷら かわ清",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -627,6 +636,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-9",
     stationId: "kabe",
+    nameEn: "Tsukushige",
     nameJa: "津久茂",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -647,6 +657,7 @@ export const places: Place[] = [
   {
     id: "ome-place",
     stationId: "ome",
+    nameEn: "Machi no Eki Ome",
     nameJa: "まちの駅青梅",
     groups: ["omiyage"],
     categoryRaw: "Omiyage",
@@ -668,6 +679,7 @@ export const places: Place[] = [
   {
     id: "ome-place-2",
     stationId: "ome",
+    nameEn: "Ome Tourist Information Center",
     nameJa: "青梅市観光案内所",
     groups: ["attraction"],
     categoryRaw: "Tourist Information",
@@ -689,6 +701,7 @@ export const places: Place[] = [
   {
     id: "ome-place-3",
     stationId: "ome",
+    nameEn: "Ome Railway Park",
     nameJa: "青梅鉄道公園",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -710,6 +723,7 @@ export const places: Place[] = [
   {
     id: "ome-place-4",
     stationId: "ome",
+    nameEn: "Ome Hills Hiking Course",
     nameJa: "青梅丘陵ハイキングコース",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -731,6 +745,7 @@ export const places: Place[] = [
   {
     id: "ome-place-5",
     stationId: "ome",
+    nameEn: "Showa Retro Museum",
     nameJa: "昭和レトロ商品博物館",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -752,6 +767,7 @@ export const places: Place[] = [
   {
     id: "ome-ome",
     stationId: "ome",
+    nameEn: "Ome Sakura Ume-an",
     nameJa: "OME桜梅庵",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -772,6 +788,7 @@ export const places: Place[] = [
   {
     id: "ome-melon-lab",
     stationId: "ome",
+    nameEn: "MELON LAB. Ome-ten",
     nameJa: "MELON LAB. 青梅店",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -793,6 +810,7 @@ export const places: Place[] = [
   {
     id: "ome-place-6",
     stationId: "ome",
+    nameEn: "Ramen Toshimaya",
     nameJa: "ラーメン登嶋家",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -814,6 +832,7 @@ export const places: Place[] = [
   {
     id: "ome-place-7",
     stationId: "ome",
+    nameEn: "Soba-dokoro Inariya",
     nameJa: "蕎麦処 いなりや",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -835,6 +854,7 @@ export const places: Place[] = [
   {
     id: "ome-place-8",
     stationId: "ome",
+    nameEn: "Kyokusei Pudding Senmonten Masaki",
     nameJa: "極生ぷりん専門店 まさ希",
     groups: ["omiyage"],
     categoryRaw: "Omiyage",
@@ -856,6 +876,7 @@ export const places: Place[] = [
   {
     id: "ome-place-9",
     stationId: "ome",
+    nameEn: "Fromage du Terroir",
     nameJa: "フロマージュ・デュ・テロワール",
     groups: ["omiyage"],
     categoryRaw: "Omiyage",
@@ -877,6 +898,7 @@ export const places: Place[] = [
   {
     id: "ome-place-10",
     stationId: "ome",
+    nameEn: "Umeya",
     nameJa: "青梅の化粧品店 うめや",
     groups: ["omiyage"],
     categoryRaw: "Omiyage",
@@ -898,6 +920,7 @@ export const places: Place[] = [
   {
     id: "mitake-maunga",
     stationId: "mitake",
+    nameEn: "maunga Mitake Honten",
     nameJa: "maunga 御岳本店",
     groups: ["outdoor"],
     categoryRaw: "Outdoor",
@@ -919,6 +942,7 @@ export const places: Place[] = [
   {
     id: "mitake-place",
     stationId: "mitake",
+    nameEn: "Takimoto Station",
     nameJa: "御岳登山鉄道 ケーブルカー滝本駅",
     groups: ["outdoor"],
     categoryRaw: "Activity",
@@ -940,6 +964,7 @@ export const places: Place[] = [
   {
     id: "mitake-place-2",
     stationId: "mitake",
+    nameEn: "Senbon-ya",
     nameJa: "千本屋",
     groups: ["omiyage"],
     categoryRaw: "Omiyage",
@@ -960,6 +985,7 @@ export const places: Place[] = [
   {
     id: "mitake-bbq-by-tokyo-wasabi",
     stationId: "mitake",
+    nameEn: "BBQ Space by Tokyo Wasabi",
     nameJa: "BBQスペース by TOKYO WASABI",
     groups: ["outdoor"],
     categoryRaw: "Outdoor",
@@ -981,6 +1007,7 @@ export const places: Place[] = [
   {
     id: "miyanohira-place",
     stationId: "miyanohira",
+    nameEn: "Tokyo Ome Ishigami Onsen Kame no I Hotel",
     nameJa: "東京・青梅石神温泉 亀の井ホテル 青梅",
     groups: ["onsen"],
     categoryRaw: "Onsen",
@@ -1002,6 +1029,7 @@ export const places: Place[] = [
   {
     id: "ishigamimae-place",
     stationId: "ishigamimae",
+    nameEn: "Seiryu no Yado Okutama Ro",
     nameJa: "清流の宿 おくたま路",
     groups: ["onsen"],
     categoryRaw: "Onsen",
@@ -1023,6 +1051,7 @@ export const places: Place[] = [
   {
     id: "hinatawada-place",
     stationId: "hinatawada",
+    nameEn: "Yoshino Baigo",
     nameJa: "吉野梅郷",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1043,6 +1072,7 @@ export const places: Place[] = [
   {
     id: "hinatawada-place-2",
     stationId: "hinatawada",
+    nameEn: "Yoshino Baigo Shotenkai",
     nameJa: "吉野梅郷商店会",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1064,6 +1094,7 @@ export const places: Place[] = [
   {
     id: "kori-place",
     stationId: "kori",
+    nameEn: "Soba & Udon Tansaburo",
     nameJa: "そば・うどん 丹三郎",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -1085,6 +1116,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place",
     stationId: "hatonosu",
+    nameEn: "Mori no Naka no Oniku Restaurant Earth Garden",
     nameJa: "森の中のお肉レストラン アースガーデン",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -1106,6 +1138,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-saka",
     stationId: "hatonosu",
+    nameEn: "Cafe Restaurant SAKA",
     nameJa: "カフェレストラン SAKA",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1127,6 +1160,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place-2",
     stationId: "hatonosu",
+    nameEn: "Hatonosu Valley",
     nameJa: "鳩ノ巣渓谷",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1148,6 +1182,7 @@ export const places: Place[] = [
   {
     id: "okutama-place",
     stationId: "okutama",
+    nameEn: "Misuzu-do",
     nameJa: "みすず堂",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1168,6 +1203,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-2",
     stationId: "okutama",
+    nameEn: "Kobido",
     nameJa: "弘美堂",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1188,6 +1224,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-3",
     stationId: "okutama",
+    nameEn: "Tokyo Tenkyusan Aoi",
     nameJa: "東京天空山葵",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1209,6 +1246,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-4",
     stationId: "okutama",
+    nameEn: "Shiromaru Tamago",
     nameJa: "しろまるたまご",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1230,6 +1268,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-5",
     stationId: "okutama",
+    nameEn: "New Dagashiya Sanma",
     nameJa: "ニュー駄菓子屋サンマ",
     groups: ["omiyage"],
     categoryRaw: "Shopping",
@@ -1251,6 +1290,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-6",
     stationId: "okutama",
+    nameEn: "Mizu to Midori no Fureai-kan",
     nameJa: "水と緑のふれあい館",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -1272,6 +1312,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-7",
     stationId: "okutama",
+    nameEn: "Ogochi Dam·Okutama Lake",
     nameJa: "小河内ダム・奥多摩湖",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -1293,6 +1334,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-8",
     stationId: "okutama",
+    nameEn: "Okutama Canoe Center",
     nameJa: "奥多摩カヌーセンター",
     groups: ["outdoor"],
     categoryRaw: "Activity",
@@ -1314,6 +1356,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-9",
     stationId: "okutama",
+    nameEn: "Trek Ring",
     nameJa: "トレックリング",
     groups: ["outdoor"],
     categoryRaw: "Activity",
@@ -1335,6 +1378,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-10",
     stationId: "okutama",
+    nameEn: "Okutama Mukashimichi",
     nameJa: "奥多摩むかし道",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1356,6 +1400,7 @@ export const places: Place[] = [
   {
     id: "fussa-place",
     stationId: "fussa",
+    nameEn: "Fussa Base Side Street",
     nameJa: "福生ベースサイドストリート",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -1377,6 +1422,7 @@ export const places: Place[] = [
   {
     id: "fussa-place-2",
     stationId: "fussa",
+    nameEn: "Ishikawa Brewery",
     nameJa: "石川酒造",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -1397,6 +1443,7 @@ export const places: Place[] = [
   {
     id: "fussa-place-3",
     stationId: "fussa",
+    nameEn: "Tamura Sakazojo",
     nameJa: "田村酒造場",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -1418,6 +1465,7 @@ export const places: Place[] = [
   {
     id: "fussa-place-4",
     stationId: "fussa",
+    nameEn: "Tama River Central Park",
     nameJa: "多摩川中央公園",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1439,6 +1487,7 @@ export const places: Place[] = [
   {
     id: "fussa-place-5",
     stationId: "fussa",
+    nameEn: "Fussa Shinmei Shrine",
     nameJa: "福生神明社",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -1460,6 +1509,7 @@ export const places: Place[] = [
   {
     id: "hamura-place",
     stationId: "hamura",
+    nameEn: "Hamura Zeki",
     nameJa: "羽村堰",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1480,6 +1530,7 @@ export const places: Place[] = [
   {
     id: "hamura-place-2",
     stationId: "hamura",
+    nameEn: "Tamagawa Josui",
     nameJa: "玉川上水",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1500,6 +1551,7 @@ export const places: Place[] = [
   {
     id: "hamura-place-3",
     stationId: "hamura",
+    nameEn: "Hamura Zoo",
     nameJa: "羽村市動物公園",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -1521,6 +1573,7 @@ export const places: Place[] = [
   {
     id: "hamura-place-4",
     stationId: "hamura",
+    nameEn: "Hamura Tulip Koen",
     nameJa: "羽村市チューリップ公園",
     groups: ["nature"],
     categoryRaw: "Nature",
@@ -1542,6 +1595,7 @@ export const places: Place[] = [
   {
     id: "hamura-place-5",
     stationId: "hamura",
+    nameEn: "Aso Shrine",
     nameJa: "阿蘇神社",
     groups: ["attraction"],
     categoryRaw: "Culture",
@@ -1562,6 +1616,7 @@ export const places: Place[] = [
   {
     id: "kabe-cafe-yoshi",
     stationId: "kabe",
+    nameEn: "CAFE hausu YOSHI",
     nameJa: "CAFE はうす YOSHI",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1585,6 +1640,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-10",
     stationId: "kabe",
+    nameEn: "Cafe Mori no Neko",
     nameJa: "カフェ もりのねこ",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1630,6 +1686,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-11",
     stationId: "kabe",
+    nameEn: "Cafe Yuu",
     nameJa: "カフェ悠",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1652,6 +1709,7 @@ export const places: Place[] = [
   {
     id: "kabe-capital",
     stationId: "kabe",
+    nameEn: "Cafe Capital",
     nameJa: "カフェCapital",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1674,6 +1732,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-12",
     stationId: "kabe",
+    nameEn: "Cafe Miyako",
     nameJa: "カフェ都",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1696,6 +1755,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-13",
     stationId: "kabe",
+    nameEn: "Sweets Eoru",
     nameJa: "スイーツエオル",
     groups: ["cafe"],
     categoryRaw: "Sweets",
@@ -1719,6 +1779,7 @@ export const places: Place[] = [
   {
     id: "kabe-place-14",
     stationId: "kabe",
+    nameEn: "Yukarie",
     nameJa: "由香里絵",
     groups: ["cafe"],
     categoryRaw: "Sweets",
@@ -1763,6 +1824,7 @@ export const places: Place[] = [
   {
     id: "ome-place-11",
     stationId: "ome",
+    nameEn: "Natsu e no Tobira",
     nameJa: "夏への扉",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -1785,6 +1847,7 @@ export const places: Place[] = [
   {
     id: "ome-place-12",
     stationId: "ome",
+    nameEn: "Tamagawaya",
     nameJa: "玉川屋",
     groups: ["food"],
     categoryRaw: "Soba",
@@ -1829,6 +1892,7 @@ export const places: Place[] = [
   {
     id: "fussa-place-6",
     stationId: "fussa",
+    nameEn: "Forte",
     nameJa: "フォルテ",
     groups: ["cafe"],
     categoryRaw: "Bakery / Café",
@@ -1851,6 +1915,7 @@ export const places: Place[] = [
   {
     id: "hamura-place-6",
     stationId: "hamura",
+    nameEn: "Isaku",
     nameJa: "一作",
     groups: ["food"],
     categoryRaw: "Soba",
@@ -1875,6 +1940,7 @@ export const places: Place[] = [
   {
     id: "okutama-place-11",
     stationId: "okutama",
+    nameEn: "Cafe Quara",
     nameJa: "カフェ クアラ",
     groups: ["cafe", "food"],
     categoryRaw: "Café / Restaurant",
@@ -1897,6 +1963,7 @@ export const places: Place[] = [
   {
     id: "kori-place-2",
     stationId: "kori",
+    nameEn: "Tamago-do",
     nameJa: "卵道",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -1919,6 +1986,7 @@ export const places: Place[] = [
   {
     id: "kawai-place",
     stationId: "kawai",
+    nameEn: "Grandex Okutama Base",
     nameJa: "グランデックス奥多摩ベース",
     groups: ["outdoor"],
     categoryRaw: "Outdoor",
@@ -1943,6 +2011,7 @@ export const places: Place[] = [
   {
     id: "kawai-place-2",
     stationId: "kawai",
+    nameEn: "Kawai Camp",
     nameJa: "川井キャンプ場",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -1966,6 +2035,7 @@ export const places: Place[] = [
   {
     id: "kawai-place-3",
     stationId: "kawai",
+    nameEn: "Kamameshi Nakai",
     nameJa: "釜めし なかい",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -1989,6 +2059,7 @@ export const places: Place[] = [
   {
     id: "kawai-place-4",
     stationId: "kawai",
+    nameEn: "Okutama Bridge",
     nameJa: "奥多摩大橋",
     groups: ["nature"],
     categoryRaw: "Nature / Scenic",
@@ -2012,6 +2083,7 @@ export const places: Place[] = [
   {
     id: "kori-chakmathi",
     stationId: "kori",
+    nameEn: "Chakmathi Kori-ten",
     nameJa: "chakmathi 古里店",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -2035,6 +2107,7 @@ export const places: Place[] = [
   {
     id: "kori-place-3",
     stationId: "kori",
+    nameEn: "Kori-zuke Inugusu",
     nameJa: "古里附のイヌグス",
     groups: ["nature"],
     categoryRaw: "Nature / Scenic",
@@ -2059,6 +2132,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place-3",
     stationId: "hatonosu",
+    nameEn: "Hatomi",
     nameJa: "鳩美",
     groups: ["food"],
     categoryRaw: "Restaurant",
@@ -2105,6 +2179,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place-4",
     stationId: "hatonosu",
+    nameEn: "Yamahato",
     nameJa: "山鳩",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -2128,6 +2203,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place-5",
     stationId: "hatonosu",
+    nameEn: "Shiromaru Dam",
     nameJa: "白丸ダム",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -2151,6 +2227,7 @@ export const places: Place[] = [
   {
     id: "hatonosu-place-6",
     stationId: "hatonosu",
+    nameEn: "Eco tto Shiromaru",
     nameJa: "エコっと白丸",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -2175,6 +2252,7 @@ export const places: Place[] = [
   {
     id: "shiromaru-place",
     stationId: "shiromaru",
+    nameEn: "Shiromaru Tamago Cafe",
     nameJa: "しろまる卵カフェ",
     groups: ["cafe"],
     categoryRaw: "Café",
@@ -2198,6 +2276,7 @@ export const places: Place[] = [
   {
     id: "shiromaru-place-2",
     stationId: "shiromaru",
+    nameEn: "Shiromaru Lake",
     nameJa: "白丸湖",
     groups: ["nature"],
     categoryRaw: "Nature / Scenic",
@@ -2221,6 +2300,7 @@ export const places: Place[] = [
   {
     id: "shiromaru-place-3",
     stationId: "shiromaru",
+    nameEn: "Shiromaru Dam",
     nameJa: "白丸ダム",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -2244,6 +2324,7 @@ export const places: Place[] = [
   {
     id: "shiromaru-place-4",
     stationId: "shiromaru",
+    nameEn: "Eco tto Shiromaru",
     nameJa: "エコっと白丸",
     groups: ["attraction"],
     categoryRaw: "Attraction",
@@ -2268,6 +2349,7 @@ export const places: Place[] = [
   {
     id: "shiromaru-place-5",
     stationId: "shiromaru",
+    nameEn: "Grandex Shiromaru Annex",
     nameJa: "グランデックス 白丸アネックス",
     groups: ["outdoor"],
     categoryRaw: "Outdoor",
@@ -2288,6 +2370,69 @@ export const places: Place[] = [
     _internal: {
       ratingStatus: "Not used for selection",
     },
+  },
+    {
+    id: "ishigamimae-cafe-baikyo",
+    stationId: "ishigamimae",
+    nameEn: "Cafe Baikyo",
+    nameJa: "かふぇ・ばいきょう",
+    groups: ["cafe"],
+    categoryRaw: "Café",
+    walkMinutes: 10,
+    walkLabel: "約10分",
+    description: {
+      ja: "落ち着いた空間でゆっくり過ごせるカフェ。テラス席もあります。",
+      en: "A calm café where you can relax and unwind. Terrace seating is also available.",
+      vi: "Một quán cà phê yên tĩnh, nơi bạn có thể thư giãn và nghỉ ngơi. Cũng có chỗ ngồi ngoài trời trên sân thượng.",
+      zh: "一家安静的咖啡馆，您可以在这里放松身心、悠闲度过。也设有露台座位。",
+      ko: "조용한 분위기 속에서 여유롭게 쉴 수 있는 카페입니다. 테라스 좌석도 마련되어 있습니다.",
+      de: "Ein ruhiges Café, in dem Sie sich entspannen und die Zeit genießen können. Terrassensitzplätze sind ebenfalls vorhanden.",
+      ru: "Спокойное кафе, где можно расслабиться и отдохнуть. Также есть места на террасе.",
+    },
+    mapUrl: "https://maps.app.goo.gl/wVE95NbkTB5FXhng7",
+  },
+
+  {
+    id: "ishigamimae-kobaien",
+    stationId: "ishigamimae",
+    nameEn: "Kobai-en",
+    nameJa: "紅梅苑",
+    groups: ["food", "omiyage"],
+    categoryRaw: "和菓子・甘味処",
+    walkMinutes: 6,
+    walkLabel: "約6分",
+    description: {
+      ja: "梅の風味を生かした和菓子や甘味を楽しめる、吉野梅郷の菓子処。",
+      en: "A confectionery shop in Yoshino Baigo offering wagashi and sweets made with the flavor of plums.",
+      vi: "Một cửa hàng bánh kẹo tại Yoshino Baigo, nơi bạn có thể thưởng thức wagashi và các món ngọt mang hương vị mơ.",
+      zh: "位于吉野梅乡的甜品店，可品尝以梅子风味制作的和果子与甜点。",
+      ko: "매실 풍미를 살린 화과자와 디저트를 즐길 수 있는, 요시노 바이고의 과자점입니다.",
+      de: "Ein Süßwarenladen in Yoshino Baigo, der Wagashi und Süßigkeiten mit Pflaumengeschmack anbietet.",
+      ru: "Кондитерская в Йосино Байго, где можно попробовать вагаси и сладости со вкусом сливы.",
+    },
+    mapUrl: "https://maps.app.goo.gl/6DfybWGc7ipLPoME8",
+  },
+
+  {
+    id: "hinatawada-ome-city-plum-park",
+    stationId: "hinatawada",
+    nameEn: "Ome Ume Park",
+    nameJa: "青梅市梅の公園",
+    groups: ["nature"],
+    categoryRaw: "Nature / Scenic",
+    walkMinutes: 15,
+    walkLabel: "約15分",
+    description: {
+      ja: "約1,200本の梅が植えられた、吉野梅郷を代表する梅の名所。",
+      en: "A renowned plum-blossom spot in Yoshino Baigo, planted with around 1,200 plum trees.",
+      vi: "Địa điểm ngắm hoa mơ nổi tiếng của Yoshino Baigo, nơi trồng khoảng 1.200 cây mơ.",
+      zh: "吉野梅乡具代表性的赏梅名胜，园内种植约1,200株梅树。",
+      ko: "약 1,200그루의 매화나무가 심어진, 요시노 바이고를 대표하는 매화 명소입니다.",
+      de: "Ein bekannter Pflaumenblüten-Ort in Yoshino Baigo mit rund 1.200 gepflanzten Pflaumenbäumen.",
+      ru: "Знаменитое место цветения слив в Йосино Байго, где посажено около 1 200 сливовых деревьев.",
+    },
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=%E9%9D%92%E6%A2%85%E5%B8%82%E6%A2%85%E3%81%AE%E5%85%AC%E5%9C%92",
   },
 ];
 

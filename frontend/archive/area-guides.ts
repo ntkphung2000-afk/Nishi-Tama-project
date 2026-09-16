@@ -1,3 +1,15 @@
+// ARCHIVED 2026-09-11 — moved out of src/data/ during the data-architecture
+// cleanup. Confirmed via repo-wide grep (`AreaGuide`, `GuidePlace`,
+// `area-guides`) to have zero importers anywhere in src/ — nothing renders
+// this file. It independently re-describes places/food already covered by
+// src/data/places.ts and src/data/content.ts's `destinations`, with its own
+// ids and its own separate translations, so it was never wired up rather
+// than being reachable dead code. Kept here for reference / possible content
+// salvage, not deleted, since it still has real editorial content in it.
+// The `@/*` path alias below no longer resolves from this location (this
+// folder is outside tsconfig's `include`), so this file will not typecheck
+// or build as-is if ever re-imported without fixing the import path first.
+
 import type { Localized } from "@/lib/i18n";
 
 /* ------------------------------------------------------------------

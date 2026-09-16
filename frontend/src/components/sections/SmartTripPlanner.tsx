@@ -4,6 +4,7 @@ import { useLang } from "@/lib/i18n";
 import { x } from "@/lib/dictionary-extra";
 import { places, type PlaceCategoryGroup } from "@/data/places";
 import { nishiTama20Stations, stationById } from "@/data/stations";
+import { PLACE_CATEGORY_ORDER } from "@/data/categories";
 import { planTrip, resolveQuery, type ItineraryStep } from "@/lib/tripPlanner";
 import { primaryGroup } from "@/lib/searchKeywords";
 import { Section, SectionHeader } from "../site/Section";
@@ -12,16 +13,6 @@ import { CategoryIcon } from "@/components/site/CategoryIcon";
 import { PlaceCard } from "@/components/site/PlaceCard";
 import { PlaceDataDisclaimer } from "@/components/site/PlaceDataDisclaimer";
 import { SearchSuggestions } from "@/components/site/SearchSuggestions";
-
-const CATEGORY_OPTIONS: PlaceCategoryGroup[] = [
-  "food",
-  "cafe",
-  "omiyage",
-  "nature",
-  "attraction",
-  "onsen",
-  "outdoor",
-];
 
 const DISTANCE_OPTIONS: { minutes: number; label: keyof typeof x.search }[] = [
   { minutes: 3, label: "within3" },
@@ -174,7 +165,7 @@ export function SmartTripPlanner() {
               >
                 {t(x.search.allCategories)}
               </button>
-              {CATEGORY_OPTIONS.map((g) => (
+              {PLACE_CATEGORY_ORDER.map((g) => (
                 <button
                   key={g}
                   type="button"

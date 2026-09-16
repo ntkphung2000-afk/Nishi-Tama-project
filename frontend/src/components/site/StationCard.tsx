@@ -1,18 +1,9 @@
 import { useLang } from "@/lib/i18n";
 import { x } from "@/lib/dictionary-extra";
-import { placesForStation, type PlaceCategoryGroup } from "@/data/places";
+import { placesForStation } from "@/data/places";
 import type { StationCard as StationCardData } from "@/data/stations";
+import { PLACE_CATEGORY_ORDER } from "@/data/categories";
 import { CategoryIcon } from "./CategoryIcon";
-
-const CATEGORY_ORDER: PlaceCategoryGroup[] = [
-  "food",
-  "cafe",
-  "omiyage",
-  "nature",
-  "attraction",
-  "onsen",
-  "outdoor",
-];
 
 /** One reusable station card. Used for all 20 stations — never duplicated per station. */
 export function StationCard({
@@ -24,7 +15,7 @@ export function StationCard({
 }) {
   const { t } = useLang();
   const places = placesForStation(station.id);
-  const groupsPresent = CATEGORY_ORDER.filter((g) => places.some((p) => p.groups.includes(g)));
+  const groupsPresent = PLACE_CATEGORY_ORDER.filter((g) => places.some((p) => p.groups.includes(g)));
 
   return (
     <div className="flex w-full flex-col border border-forest/20 bg-background p-6">

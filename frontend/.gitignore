@@ -19,7 +19,10 @@ dist-ssr
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
+.env
 
+# Local backups written by scripts/ before they rewrite a data file
+*.backup
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

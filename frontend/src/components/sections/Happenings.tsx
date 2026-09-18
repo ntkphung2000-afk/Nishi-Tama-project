@@ -146,16 +146,18 @@ export function EventsSection({
             {events.map((e, i) => (
               <Reveal as="li" key={e.id} delay={(i % 4) * 60}>
                 <article className="group grid grid-cols-1 items-start gap-4 border-b border-forest/20 py-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md sm:grid-cols-[7rem_10rem_minmax(0,1fr)] sm:items-center sm:gap-8 lg:grid-cols-[8rem_14rem_minmax(0,1fr)]">
-                  <p className="font-display text-2xl text-forest sm:text-[1.75rem]">
-                    {formatEventDate(e.date, lang)}
-                  </p>
+                  <div className="flex items-center gap-4 sm:contents">
+                    <p className="font-display text-2xl text-forest sm:text-[1.75rem]">
+                      {formatEventDate(e.date, lang)}
+                    </p>
 
-                  <Figure
-                    src={e.image}
-                    alt={e.en}
-                    className="img-zoom col-start-2 row-span-2 hidden aspect-3/2 w-full sm:block sm:aspect-4/3 lg:aspect-3/2"
-                    label={e.en}
-                  />
+                    <Figure
+                      src={e.image}
+                      alt={e.en}
+                      className="img-zoom aspect-square w-20 shrink-0 sm:col-start-2 sm:row-span-2 sm:aspect-4/3 sm:w-full lg:aspect-3/2"
+                      label={e.en}
+                    />
+                  </div>
 
                   <div className="min-w-0 sm:col-start-3">
                     <h3 className="font-jp text-base text-forest-deep sm:text-lg">{e.ja}</h3>

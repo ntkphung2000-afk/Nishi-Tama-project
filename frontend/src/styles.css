@@ -58,6 +58,8 @@
   --color-sky: var(--sky);
   --color-sage: var(--sage);
   --color-clay: var(--clay);
+  --color-vermillion: var(--vermillion);
+  --color-vermillion-bright: var(--vermillion-bright);
   --font-display: "Cormorant Garamond", "Shippori Mincho", "Noto Serif", "Iowan Old Style", "Georgia", "Times New Roman", serif;
   --font-jp: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", "MS Mincho", serif;
   --font-sans: "Zen Kaku Gothic New", "Noto Sans JP", "Noto Sans SC", "Noto Sans KR", "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans", "Yu Gothic", "Meiryo", "Helvetica Neue", Arial, sans-serif;
@@ -80,6 +82,14 @@
   --sage: oklch(0.48 0.033 155);
   --clay: oklch(0.53 0.075 45);
 
+  /* Accent — vermillion, inspired by torii-gate red. Used sparingly for
+   * ordinals, a few named eyebrows and the active nav state; never as a
+   * sitewide replacement for --accent (which shadcn/ui components already
+   * use). --vermillion-bright is a lighter tint for AA contrast on dark
+   * (forest-deep) backgrounds, where the base tone falls short. */
+  --vermillion: #c0432b;
+  --vermillion-bright: #e8785a;
+
   --background: var(--cream);
   --foreground: var(--charcoal);
   --card: oklch(0.985 0.008 88);
@@ -91,7 +101,9 @@
   --secondary: var(--beige);
   --secondary-foreground: var(--forest-deep);
   --muted: oklch(0.93 0.02 86);
-  --muted-foreground: oklch(0.5 0.015 150);
+  /* Warm gray (was a cool oklch gray) so body copy reads warmer, in step
+   * with the cream/beige palette. ~5.1:1 on --cream — passes WCAG AA. */
+  --muted-foreground: #6b6558;
   --accent: var(--forest);
   --accent-foreground: var(--cream);
   --destructive: oklch(0.55 0.18 27);

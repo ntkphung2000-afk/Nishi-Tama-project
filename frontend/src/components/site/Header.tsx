@@ -104,7 +104,9 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 className={`relative text-[0.8125rem] tracking-wide transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:origin-left hover:after:scale-x-100 data-[status=active]:after:scale-x-100 ${
-                  solid ? "text-charcoal/80 hover:text-forest-deep" : "text-cream/85 hover:text-cream"
+                  solid
+                    ? "text-charcoal/80 hover:text-forest-deep data-[status=active]:text-vermillion"
+                    : "text-cream/85 hover:text-cream"
                 }`}
               >
                 {t(item.label)}

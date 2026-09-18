@@ -97,6 +97,7 @@ export function EventsSection({
         eyebrow={t(ui.events.eyebrow)}
         title={eventsMonthTitle(lang, month)}
         lead={t(ui.events.lead)}
+        accent
       />
 
       <Reveal className="mt-10 lg:mt-14">

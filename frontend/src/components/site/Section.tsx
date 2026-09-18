@@ -7,17 +7,25 @@ export function SectionHeader({
   lead,
   align = "left",
   tone = "dark",
+  accent = false,
 }: {
   eyebrow: string;
   title: string;
   lead?: string;
   align?: "left" | "center";
   tone?: "dark" | "light";
+  /** Highlight the eyebrow in the vermillion accent color instead of the
+   *  default muted tone. Use sparingly — only on a few named sections. */
+  accent?: boolean;
 }) {
   const centered = align === "center";
   return (
     <Reveal className={centered ? "mx-auto max-w-2xl text-center" : "max-w-3xl"}>
-      <p className={`eyebrow ${tone === "light" ? "text-cream/70" : ""}`}>{eyebrow}</p>
+      {/* `eyebrow` sets its own color; the `!` forces the accent override to
+          win regardless of Tailwind's utility ordering (see PageHeader's
+          absolute/relative conflict for why relying on class order alone
+          is unsafe). */}
+      <p className={`eyebrow ${accent ? "text-vermillion!" : tone === "light" ? "text-cream/70" : ""}`}>{eyebrow}</p>
       <h2
         className={`mt-4 text-[clamp(2rem,5vw,3.5rem)] leading-[1.08] tracking-tight ${
           tone === "light" ? "text-cream" : "text-forest-deep"

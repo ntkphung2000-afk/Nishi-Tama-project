@@ -95,6 +95,7 @@ export function SmartTripPlanner() {
         eyebrow={t(x.search.eyebrow)}
         title={t(x.search.title)}
         lead={t(x.search.lead)}
+        accent
       />
 
       <Reveal className="mt-10">

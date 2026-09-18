@@ -106,7 +106,7 @@ export function WeekdayNoteSection() {
     <Section id="weekday" tone="card">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeader eyebrow={t(ui.weekday.eyebrow)} title={t(ui.weekday.title)} />
+          <SectionHeader eyebrow={t(ui.weekday.eyebrow)} title={t(ui.weekday.title)} accent />
           <Reveal delay={100}>
             <p className="mt-6 max-w-md text-base leading-relaxed text-charcoal/80">
               {t(ui.weekday.lead)}

@@ -119,27 +119,33 @@ export const images = {
   // Hikawa Area
   hikawa: "/images/areas/hikawa-area.jpg",
 
-  // Mount Hinode — image not yet supplied; Figure.tsx shows a labeled
-  // placeholder until a real photo is placed at this exact path.
-  mountHinode: "/images/areas/mount-hinode.jpg",
+  // Mount Hinode — stand-in: free Unsplash photo (generic forested-hill
+  // hiking scene, not literally Mount Hinode). Swap for a real photo when
+  // available.
+  mountHinode: "https://images.unsplash.com/photo-1658296769881-f50967f4e740?auto=format&fit=crop&w=1600&q=80",
 
-  // Mount Odake — image not yet supplied.
-  mountOdake: "/images/areas/mount-odake.jpg",
+  // Mount Odake — stand-in: free Unsplash photo (generic forested-mountain
+  // hiking scene, not literally Mount Odake). Swap for a real photo when
+  // available.
+  mountOdake: "https://images.unsplash.com/photo-1658296758904-45442f808dae?auto=format&fit=crop&w=1600&q=80",
 
-  // Hamura Zoo — image not yet supplied.
-  hamuraZoo: "/images/areas/hamura-zoo.jpg",
+  // Hamura Zoo — free Unsplash photo (capybara at a zoo enclosure).
+  hamuraZoo: "https://images.unsplash.com/photo-1683479452479-21a4f12672d2?auto=format&fit=crop&w=1600&q=80",
 
-  // Tokyo Summerland — image not yet supplied.
-  tokyoSummerland: "/images/areas/tokyo-summerland.jpg",
+  // Tokyo Summerland — free Unsplash photo (water park slide).
+  tokyoSummerland: "https://images.unsplash.com/photo-1706843540963-ae52d784de62?auto=format&fit=crop&w=1600&q=80",
 
-  // Hinode Tsurutsuru Onsen — image not yet supplied.
-  hinodeTsurutsuruOnsen: "/images/areas/hinode-tsurutsuru-onsen.jpg",
+  // Hinode Tsurutsuru Onsen — stand-in: free Unsplash photo of a Japanese
+  // onsen (Beppu), not literally this onsen. Swap for a real photo when
+  // available.
+  hinodeTsurutsuruOnsen: "https://images.unsplash.com/photo-1752917878233-fd51e99a48ba?auto=format&fit=crop&w=1600&q=80",
 
-  // Ozawa Sake Brewery (Sawanoi) — image not yet supplied.
-  ozawaSakeBrewery: "/images/areas/ozawa-sake-brewery.jpg",
+  // Ozawa Sake Brewery (Sawanoi) — free Unsplash photo (sake barrels, Japan).
+  ozawaSakeBrewery: "https://images.unsplash.com/photo-1758470475891-5dae231b01b5?auto=format&fit=crop&w=1600&q=80",
 
-  // Ishikawa Brewery — image not yet supplied.
-  ishikawaBrewery: "/images/areas/ishikawa-brewery.jpg",
+  // Ishikawa Brewery — stand-in: free Unsplash photo (craft beer glasses),
+  // not specific to this brewery. Swap for a real photo when available.
+  ishikawaBrewery: "https://images.unsplash.com/photo-1687771454203-97d0b08bbeb2?auto=format&fit=crop&w=1600&q=80",
 },
 
   // ============================================================
@@ -203,7 +209,9 @@ experiences: {
   // OTHER SECTIONS
   // ============================================================
 
-  manners: "/images/manners.jpg",
+  // Stand-in: free Unsplash photo (green countryside near Usuki, Japan),
+  // not a Nishi Tama photo specifically. Swap for a real photo when available.
+  manners: "https://images.unsplash.com/photo-1698877716509-408261f38661?auto=format&fit=crop&w=1600&q=80",
 
   plan: "/images/plan-trip.jpg",
 

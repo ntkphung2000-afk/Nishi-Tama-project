@@ -1498,7 +1498,8 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 1
   {
     id: "ume-plum-products",
-    image:"/images.taste.umeProducts.jpeg",
+    // Free Unsplash photo (ume/plum fruits, Matsuyama, Japan).
+    image: "https://images.unsplash.com/photo-1592918650003-685687a4ef00?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "梅・プラム製品",
       en: "Ume & plum products",
@@ -1545,7 +1546,8 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 2
   {
     id: "farm-vegetables-fruit",
-    image: "/images.taste.farmVegetables.jpeg",
+    // Free Unsplash photo (fresh produce at a Japanese market).
+    image: "https://images.unsplash.com/photo-1751203659052-e9de7334c508?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "農園野菜＆果物",
       en: "Farm vegetables & fruit",
@@ -1604,7 +1606,8 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 3
   {
     id: "river-mountain-foods",
-    image: "/images.taste.riverMountainFoods.jpeg",
+    // Free Unsplash photo (grilled fish dish, Japan).
+    image: "https://images.unsplash.com/photo-1515669097368-22e68427d265?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "川と山の恵み",
       en: "River & mountain foods",
@@ -1663,7 +1666,8 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 4
   {
     id: "regional-sweets",
-    image: "/images.taste.regionalSweets.jpeg",
+    // Free Unsplash photo (tri-color dango skewers, Japan).
+    image: "https://images.unsplash.com/photo-1785594023729-908a1bfb7d04?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "銘菓・和洋菓子",
       en: "Regional sweets",
@@ -1723,7 +1727,8 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 5
   {
     id: "local-drinks",
-    image: "/images.taste.localDrinks.jpeg",
+    // Free Unsplash photo (sake poured into ceremonial cups, Japan).
+    image: "https://images.unsplash.com/photo-1664477407933-dd42ed0c6c62?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "地酒＆クラフトビール",
       en: "Local drinks",
@@ -1770,7 +1775,9 @@ export const tasteOfNishiTamaData: TasteItem[] = [
   // CARD 6
   {
     id: "seasonal-specialties",
-    image: "/images.taste.seasonalSpecialties.jpeg",
+    // Stand-in: free Unsplash photo (autumn foliage, Tokyo, Japan) — not
+    // specific to Hinohara. Swap for a real photo when available.
+    image: "https://images.unsplash.com/photo-1748329774569-3af5fde9f3ff?auto=format&fit=crop&w=1200&q=80",
     title: {
       ja: "季節の味覚",
       en: "Seasonal specialties",

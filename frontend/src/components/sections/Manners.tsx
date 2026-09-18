@@ -1,3 +1,4 @@
+import { Leaf, Landmark, Users } from "lucide-react";
 import { images } from "@/config/images";
 import { useLang } from "@/lib/i18n";
 import { ui } from "@/lib/dictionary";
@@ -6,10 +7,24 @@ import { Section, SectionHeader } from "../site/Section";
 import { Reveal } from "../site/Reveal";
 import { Figure } from "../site/Figure";
 
+// Stand-in background: free Unsplash photo (mossy stone stairs to a torii
+// gate, Japan) — swap for real Nishi Tama photography/illustration later.
+const closingBackground =
+  "https://images.unsplash.com/photo-1610338732118-09d3b6fd030c?auto=format&fit=crop&w=2400&q=80";
+
+// Icons are lucide-react placeholders standing in for a future hand-drawn
+// set (one per manners.p1/p2/p3 — nature, people, local culture).
+const closingItems = [
+  { text: ui.manners.p1, Icon: Leaf },
+  { text: ui.manners.p2, Icon: Users },
+  { text: ui.manners.p3, Icon: Landmark },
+];
+
 export function MannersSection() {
   const { t } = useLang();
 
   return (
+    <>
     <Section id="manners" tone="card">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
@@ -49,21 +64,48 @@ export function MannersSection() {
         </ul>
       </div>
 
-      <Reveal className="mt-20 border-t border-forest/15 pt-16 text-center lg:mt-28">
-        <p className="font-display text-[clamp(1.75rem,5vw,3.25rem)] leading-tight text-forest-deep">
-          {t(ui.manners.closing1)}
-          <br />
-          {t(ui.manners.closing2)}
-        </p>
-        <ul className="mx-auto mt-12 grid max-w-3xl gap-8 sm:grid-cols-3">
-          {[ui.manners.p1, ui.manners.p2, ui.manners.p3].map((p, i) => (
-            <li key={i} className="border-t border-forest/25 pt-5">
-              <span className="eyebrow">{`0${i + 1}`}</span>
-              <p className="mt-2 font-display text-xl text-charcoal">{t(p)}</p>
-            </li>
+    </Section>
+
+    {/* Full-bleed closing statement — its own top-level section (not nested
+        in Section's max-w container) so the background image can run edge
+        to edge, the way PageHeader does. */}
+    <section className="relative overflow-hidden bg-forest-deep px-5 py-24 text-center sm:px-8 sm:py-32 lg:px-12 lg:py-40">
+      <div className="absolute inset-0">
+        <Figure src={closingBackground} alt="" className="h-full w-full" />
+      </div>
+      <span className="sr-only">A misty stone stairway leading to a torii gate in a mossy forest</span>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-b from-forest-deep/20 via-forest-deep/55 to-forest-deep/90"
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1400px]">
+        <Reveal>
+          <p className="font-display text-[clamp(1.75rem,5vw,3.25rem)] leading-tight text-cream">
+            {t(ui.manners.closing1)}
+            <br />
+            {t(ui.manners.closing2)}
+          </p>
+        </Reveal>
+
+        <ul className="mx-auto mt-14 grid max-w-4xl gap-6 sm:grid-cols-3">
+          {closingItems.map(({ text, Icon }, i) => (
+            <Reveal
+              as="li"
+              key={i}
+              delay={i * 90}
+              className="rounded-2xl border border-cream/20 bg-cream/10 px-6 py-8 backdrop-blur-md"
+            >
+              <Icon aria-hidden="true" className="mx-auto h-7 w-7 text-cream/70" />
+              <span className="mx-auto mt-5 flex h-10 w-10 items-center justify-center rounded-full border border-vermillion-bright font-display text-lg text-vermillion-bright">
+                {`0${i + 1}`}
+              </span>
+              <p className="mt-4 font-display text-xl text-cream">{t(text)}</p>
+            </Reveal>
           ))}
         </ul>
-      </Reveal>
-    </Section>
+      </div>
+    </section>
+    </>
   );
 }
